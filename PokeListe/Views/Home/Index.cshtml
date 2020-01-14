@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Obtentions</th>
+            </tr>
+        </thead>
+        <tbody id="listePoke">
+
+            @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
+            {
+                <tr>
+                    <td>@pokemon.Numero</td>
+                    <td>
+                        <img src="~/Content/Img/pokedex/@pokemon.Img" />
+                    </td>
+                    <td>@pokemon.Nom</td>
+                    <td>@pokemon.Description</td>
+                    <td>@pokemon.Obtention</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>

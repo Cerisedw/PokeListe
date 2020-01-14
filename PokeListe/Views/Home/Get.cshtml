@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Obtentions</th>
+            </tr>
+        </thead>
+        <tbody id="listePoke">
+                <tr>
+                    <td>@Model.Numero</td>
+                    <td>
+                        <img src="~/Content/Img/pokedex/@Model.Img" />
+                    </td>
+                    <td>@Model.Nom</td>
+                    <td>@Model.Description</td>
+                    <td>@Model.Obtention</td>
+                </tr>
+
+        </tbody>
+    </table>
+
+</div>

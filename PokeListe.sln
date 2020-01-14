@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeListe", "PokeListe\PokeListe.csproj", "{253C07F4-7203-40CC-B726-C7F8F01C5ECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBox", "ToolBox\ToolBox.csproj", "{6CB910DC-1F61-4E70-8BCC-2E95C29E32BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeListe.DAL", "PokeListe.DAL\PokeListe.DAL.csproj", "{613F929B-AED4-4B36-8B62-F8AE922FDAA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeListe.Entities", "PokeListe.Entities\PokeListe.Entities.csproj", "{EC97C4A4-AE92-4F97-9BE3-35348E1BE402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeListe.Tools", "PokeListe.Tools\PokeListe.Tools.csproj", "{19750832-EA88-43E3-866E-6A1CA87365B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeListe.Models", "PokeListe.Models\PokeListe.Models.csproj", "{4F210F1A-40CB-4B77-BC47-3A4730AFBC2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{253C07F4-7203-40CC-B726-C7F8F01C5ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253C07F4-7203-40CC-B726-C7F8F01C5ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253C07F4-7203-40CC-B726-C7F8F01C5ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253C07F4-7203-40CC-B726-C7F8F01C5ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB910DC-1F61-4E70-8BCC-2E95C29E32BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB910DC-1F61-4E70-8BCC-2E95C29E32BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB910DC-1F61-4E70-8BCC-2E95C29E32BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB910DC-1F61-4E70-8BCC-2E95C29E32BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{613F929B-AED4-4B36-8B62-F8AE922FDAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{613F929B-AED4-4B36-8B62-F8AE922FDAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{613F929B-AED4-4B36-8B62-F8AE922FDAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{613F929B-AED4-4B36-8B62-F8AE922FDAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC97C4A4-AE92-4F97-9BE3-35348E1BE402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC97C4A4-AE92-4F97-9BE3-35348E1BE402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC97C4A4-AE92-4F97-9BE3-35348E1BE402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC97C4A4-AE92-4F97-9BE3-35348E1BE402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19750832-EA88-43E3-866E-6A1CA87365B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19750832-EA88-43E3-866E-6A1CA87365B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19750832-EA88-43E3-866E-6A1CA87365B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19750832-EA88-43E3-866E-6A1CA87365B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F210F1A-40CB-4B77-BC47-3A4730AFBC2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F210F1A-40CB-4B77-BC47-3A4730AFBC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F210F1A-40CB-4B77-BC47-3A4730AFBC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F210F1A-40CB-4B77-BC47-3A4730AFBC2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EA59169-2033-49FA-96E6-D8D29929E929}
+	EndGlobalSection
+EndGlobal

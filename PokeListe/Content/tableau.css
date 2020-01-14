@@ -1,0 +1,24 @@
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+tr {
+    background-color: #f9f6f7;
+}
+tbody tr:hover {
+    background-color: #aa798b;
+    color: white;
+}
+th {
+    border: 1px solid #2c4259;
+    padding: 5px;
+    font-size: 110%;
+    color: white;
+    background-color: #5e0324;
+}
+td {
+    text-align: center;
+    padding: 5px 20px;
+    border: 1px solid #2c4259;
+}
