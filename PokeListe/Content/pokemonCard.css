@@ -1,0 +1,33 @@
+.vignette {
+    background-color: #f9f6f7;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    /*width: 100px;*/
+
+
+}
+    .vignette h4 {
+        line-height: 0;
+    }
+
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    /*justify-content: center;*/
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.noEvent {
+    pointer-events: none;
+}
+
+.vignetteAhref {
+    display: block;
+    text-decoration: none;
+}

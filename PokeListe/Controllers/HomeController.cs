@@ -19,21 +19,13 @@ namespace PokeListe.Controllers
             List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.GetAll());
             return View(listePoke);
         }
-
-        public ActionResult Get()
+        public ActionResult Get(int id)
         {
             ViewBag.Message = "Your application description page.";
             PokemonRepository pr = new PokemonRepository(cnString);
             // Pour le test, c'est un id fixe
-            PokemonView poke = PokemonTools.PokeToPokeView(pr.Get(1));
+            PokemonView poke = PokemonTools.PokeToPokeView(pr.Get(id));
             return View(poke);
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }

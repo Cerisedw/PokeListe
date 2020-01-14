@@ -118,5 +118,7 @@ namespace PokeListe.Entities.Models
             }
         }
 
+        public Stat Stat { get; set; }
+
     }
 }

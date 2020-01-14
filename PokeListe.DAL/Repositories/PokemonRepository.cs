@@ -12,7 +12,9 @@ namespace PokeListe.DAL.Repositories
     {
         public PokemonRepository (string Cnstr) : base(Cnstr)
         {
-            InsertCommand = "";
+            InsertCommand = "INSERT INTO Pokemon(Nom, Numero, Description, Img, Obtention) " +
+                "OUTPUT INSERTED.IdPokemon " +
+                "VALUES(@Nom, @Numero, @Description, @Img, @Obtention);";
             UpdateCommand = "";
         }
         public override bool Delete(int key)
@@ -32,7 +34,11 @@ namespace PokeListe.DAL.Repositories
 
         public override Pokemon Insert(Pokemon item)
         {
-            throw new NotImplementedException();
+            Dictionary<string, object> Parameters = itemToDictio(item);
+            int id = insert(Parameters);
+            item.IdPokemon = id;
+            return item;
+
         }
 
         // Methode du repo

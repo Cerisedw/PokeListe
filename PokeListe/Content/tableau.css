@@ -6,10 +6,10 @@ table {
 tr {
     background-color: #f9f6f7;
 }
-tbody tr:hover {
+/*tbody tr:hover {
     background-color: #aa798b;
     color: white;
-}
+}*/
 th {
     border: 1px solid #2c4259;
     padding: 5px;
