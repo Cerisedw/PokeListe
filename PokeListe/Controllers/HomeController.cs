@@ -4,6 +4,7 @@ using PokeListe.Models.Models;
 using PokeListe.Tools.Mappers;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,7 +13,7 @@ namespace PokeListe.Controllers
 {
     public class HomeController : Controller
     {
-        public string cnString = @"Data Source=WAD-1\ADMINSQL;Initial Catalog=PokeList;User ID=aspuser;Password=test1234=;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public string cnString = ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString;
         public ActionResult Index()
         {
             PokemonRepository pr = new PokemonRepository(cnString);
@@ -23,9 +24,20 @@ namespace PokeListe.Controllers
         {
             ViewBag.Message = "Your application description page.";
             PokemonRepository pr = new PokemonRepository(cnString);
-            // Pour le test, c'est un id fixe
             PokemonView poke = PokemonTools.PokeToPokeView(pr.Get(id));
             return View(poke);
+        }
+        public ActionResult AllTypes()
+        {
+            TypePokeRepository tr = new TypePokeRepository(cnString);
+            List<TypeView> listeTypes = TypeTools.ListTypeToListTypeView(tr.GetAll());
+            return View(listeTypes);
+        }
+        public ActionResult GetType(int id)
+        {
+            TypePokeRepository tr = new TypePokeRepository(cnString);
+            TypeView type = TypeTools.TypeToTypeView(tr.Get(id));
+            return View(type);
         }
     }
 }

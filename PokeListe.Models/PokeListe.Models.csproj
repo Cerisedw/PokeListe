@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Models\PokemonView.cs" />
     <Compile Include="Models\StatView.cs" />
+    <Compile Include="Models\TypeView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

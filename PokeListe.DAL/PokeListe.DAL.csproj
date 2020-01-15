@@ -45,6 +45,8 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepository.cs" />
     <Compile Include="Repositories\PokemonRepository.cs" />
+    <Compile Include="Repositories\StatRepository.cs" />
+    <Compile Include="Repositories\TypePokeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PokeListe.Entities\PokeListe.Entities.csproj">

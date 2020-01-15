@@ -1,7 +1,9 @@
-﻿using PokeListe.Entities.Models;
+﻿using PokeListe.DAL.Repositories;
+using PokeListe.Entities.Models;
 using PokeListe.Models.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +22,9 @@ namespace PokeListe.Tools.Mappers
                 Description = poke.Description,
                 Img = poke.Img,
                 Obtention = poke.Obtention,
-                IdStat = poke.IdStat
+                IdStat = poke.IdStat,
+                Stat = StatTools.AddStatToPokemonView(poke),
+                Types = TypeTools.TypeViewFromPokemon(poke)
             };
         }
 

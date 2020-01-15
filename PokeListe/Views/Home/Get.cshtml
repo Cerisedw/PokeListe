@@ -10,22 +10,49 @@
                 <th>N°</th>
                 <th>Image</th>
                 <th>Nom</th>
+                <th>Type</th>
                 <th>Description</th>
                 <th>Obtentions</th>
             </tr>
         </thead>
         <tbody id="listePoke">
-                <tr>
-                    <td>@Model.Numero</td>
-                    <td>
-                        <img src="~/Content/Img/pokedex/@Model.Img" />
-                    </td>
-                    <td>@Model.Nom</td>
-                    <td>@Model.Description</td>
-                    <td>@Model.Obtention</td>
-                </tr>
-
+            <tr>
+                <td>@Model.Numero</td>
+                <td>
+                    <img src="~/Content/Img/pokedex/@Model.Img" />
+                </td>
+                <td>@Model.Nom</td>
+                <td>
+                    @foreach (PokeListe.Models.Models.TypeView type in Model.Types)
+                    {
+                        <img src="~/Content/Img/type/@type.Img" />
+                    }
+                </td>
+                <td>@Model.Description</td>
+                <td>@Model.Obtention</td>
+            </tr>
         </tbody>
     </table>
-
+    <table>
+        <thead>
+            <tr>
+                <th>Point de vie</th>
+                <th>Attaque</th>
+                <th>Défense</th>
+                <th>Attaque Spéciale</th>
+                <th>Défense Spéciale</th>
+                <th>Vitesse</th>
+            </tr>
+        </thead>
+        <tbody id="listePoke">
+            <tr>
+                <td>@Model.Stat.Hp</td>
+                <td>@Model.Stat.Atk</td>
+                <td>@Model.Stat.Def</td>
+                <td>@Model.Stat.AtkSpe</td>
+                <td>@Model.Stat.DefSpe</td>
+                <td>@Model.Stat.Vit</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

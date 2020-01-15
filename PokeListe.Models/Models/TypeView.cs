@@ -1,26 +1,16 @@
-﻿using PokeListe.Entities.Models.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokeListe.Entities.Models
+namespace PokeListe.Models.Models
 {
-    [Table("Type", "IdType")]
-    public class Type : IEntities<int>
+    public class TypeView
     {
         private int _idType;
         private string _nom;
         private string _img;
-
-        public int id
-        {
-            get
-            {
-                return IdType;
-            }
-        }
 
         public int IdType
         {
@@ -60,5 +50,9 @@ namespace PokeListe.Entities.Models
                 _img = value;
             }
         }
+
+        public List<Type> Faiblesse { get; set; }
+        public List<Type> Resistance { get; set; }
+        public List<Type> Immunite { get; set; }
     }
 }

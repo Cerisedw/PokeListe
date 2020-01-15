@@ -46,7 +46,7 @@
     <Compile Include="Models\Pokemon.cs" />
     <Compile Include="Models\Stat.cs" />
     <Compile Include="Models\TableAttributes.cs" />
-    <Compile Include="Models\Type.cs" />
+    <Compile Include="Models\TypePoke.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

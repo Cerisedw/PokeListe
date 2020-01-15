@@ -107,7 +107,7 @@ namespace PokeListe.Models.Models
         }
 
         public StatView Stat { get; set; }
-
+        public List<TypeView> Types { get; set;  }
 
     }
 }

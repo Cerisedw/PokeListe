@@ -11,6 +11,7 @@
                 <th>N°</th>
                 <th>Image</th>
                 <th>Nom</th>
+                <th>Type</th>
             </tr>
         </thead>
         <tbody id="listePoke">
@@ -23,6 +24,14 @@
                     <img src="~/Content/Img/pokedex/@pokemon.Img" />
                 </td>
                 <td>@pokemon.Nom</td>
+                <td>
+                    @foreach (PokeListe.Models.Models.TypeView type in pokemon.Types)
+                    {
+                        <a href="~/Home/GetType/@type.IdType">
+                            <img src="~/Content/Img/type/@type.Img" />
+                        </a>
+                    }
+                </td>
                 <td><a href="/Home/Get/@pokemon.IdPokemon">Details</a></td>
             </tr>
             }

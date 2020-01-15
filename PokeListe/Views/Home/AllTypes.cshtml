@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Tous les types";
+}
+
+<h2>Liste des types</h2>
+
+<div class="row">
+    <table>
+        @*<thead>
+            <tr>
+                <th>Image</th>
+                <th>Nom</th>
+            </tr>
+        </thead>*@
+        <tbody id="listePoke">
+
+            @foreach (PokeListe.Models.Models.TypeView type in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="~/Content/Img/type/@type.Img" />
+                    </td>
+                    <td>@type.Nom</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
