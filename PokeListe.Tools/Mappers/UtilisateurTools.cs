@@ -24,6 +24,7 @@ namespace PokeListe.Tools.Mappers
 
         public static UtilisateurView UtilisateurToUtilisateurView(Utilisateur util)
         {
+            if (util == null) return null; 
             return new UtilisateurView()
             {
                 IdUtilisateur = util.id,

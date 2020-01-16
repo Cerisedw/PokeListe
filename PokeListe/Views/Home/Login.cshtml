@@ -13,18 +13,22 @@
 
 <h2>Log In</h2></br>
 <form method="post" action="/Home/Login">
-    <label>Email</label>
-    <input type="text" name="Email" /></br>
-    <label>Password</label>
-    <input type="password" name="Mdp" /></br>
-    <button type="submit">Envoyer</button></br></br>
-    @if (@ViewBag.ErrorLoginMessage != null)
-    {
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="Email" /></br>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="Mdp" /></br>
+    </div>
+        <button class="btn btn-primary" type="submit">Envoyer</button></br></br>
+        @if (@ViewBag.ErrorLoginMessage != null)
+        {
 
-        <center>
-            <p class="alert alert-danger">@Html.Raw(ViewBag.ErrorLoginMessage)</p>
-        </center>
-    }
+            <center>
+                <p class="alert alert-danger">@Html.Raw(ViewBag.ErrorLoginMessage)</p>
+            </center>
+        }
 
 </form>
 
@@ -32,22 +36,31 @@
 <h2>Sign Up</h2></br>
 <form method="post" action="/Home/Register" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
-    <label>Pseudo</label>
-    <input type="text" name="Pseudo" /></br>
-    <label>Email</label>
-    <input type="text" name="Email" /></br>
-    <label>Mot de passe</label>
-    <input type="password" name="Mdp" /></br>
-    <label>Confirmer le password</label>
-    <input type="password" name="ConfirmMdp" /></br>
-    <input type="file" name="file" id="file"></br>
-    <button type="submit">Envoyer</button>
-    @if (@ViewBag.ErrorMessage != null)
-    {
+    <div class="form-group">
+        <label>Pseudo</label>
+        <input type="text" class="form-control" name="Pseudo" /></br>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="Email" /></br>
+    </div>
+    <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" class="form-control" name="Mdp" /></br>
+    </div>
+    <div class="form-group">
+        <label>Confirmer le password</label>
+        <input type="password" class="form-control" name="ConfirmMdp" /></br>
+    </div>
+    <div class="form-group">
+        <input type="file" class="form-control" name="file" id="file"></br>
+    </div>
+    <button class="btn btn-primary" type="submit">Envoyer</button>
+        @if (@ViewBag.ErrorMessage != null)
+        {
 
-        <center>
-            <p class="alert alert-danger">@Html.Raw(ViewBag.ErrorMessage)</p>
-        </center>
-    }
-
+            <center>
+                <p class="alert alert-danger">@Html.Raw(ViewBag.ErrorMessage)</p>
+            </center>
+        }
 </form>

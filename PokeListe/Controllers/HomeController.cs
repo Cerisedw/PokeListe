@@ -61,7 +61,7 @@ namespace PokeListe.Controllers
             }
             else
             {
-                ViewBag.ErrorLoginMessage = "Erreur Login/Mot de passe";
+                ViewBag.ErrorLoginMessage = "Erreur Email/Mot de passe";
                 return View("Login");
             }
         }
