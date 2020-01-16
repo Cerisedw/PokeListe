@@ -21,9 +21,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Liste des types", "AllTypes", "Home")</li>
-
+                    <li>@Html.ActionLink("LogIn", "Login", "Home")</li>
+                    <li>@Html.ActionLink("LogOff", "LogOff", "Home")</li>
                 </ul>
+                @if (PokeListe.Session.SessionUtils.ConnectedUser != null)
+                {
+                    <img style="width:50px;" src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
+                }
             </div>
+           
         </div>
     </div>
     <div class="container body-content">

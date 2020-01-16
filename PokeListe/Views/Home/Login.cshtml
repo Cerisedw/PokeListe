@@ -1,0 +1,53 @@
+﻿﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.SuccessMessage
+    </div>
+}
+
+
+<h2>Log In</h2></br>
+<form method="post" action="/Home/Login">
+    <label>Email</label>
+    <input type="text" name="Email" /></br>
+    <label>Password</label>
+    <input type="password" name="Mdp" /></br>
+    <button type="submit">Envoyer</button></br></br>
+    @if (@ViewBag.ErrorLoginMessage != null)
+    {
+
+        <center>
+            <p class="alert alert-danger">@Html.Raw(ViewBag.ErrorLoginMessage)</p>
+        </center>
+    }
+
+</form>
+
+
+<h2>Sign Up</h2></br>
+<form method="post" action="/Home/Register" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <label>Pseudo</label>
+    <input type="text" name="Pseudo" /></br>
+    <label>Email</label>
+    <input type="text" name="Email" /></br>
+    <label>Mot de passe</label>
+    <input type="password" name="Mdp" /></br>
+    <label>Confirmer le password</label>
+    <input type="password" name="ConfirmMdp" /></br>
+    <input type="file" name="file" id="file"></br>
+    <button type="submit">Envoyer</button>
+    @if (@ViewBag.ErrorMessage != null)
+    {
+
+        <center>
+            <p class="alert alert-danger">@Html.Raw(ViewBag.ErrorMessage)</p>
+        </center>
+    }
+
+</form>
