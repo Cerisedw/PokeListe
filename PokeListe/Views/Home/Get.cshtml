@@ -25,8 +25,11 @@
                 <td>
                     @foreach (PokeListe.Models.Models.TypeView type in Model.Types)
                     {
-                        <img src="~/Content/Img/type/@type.Img" />
+                        <a href="~/Home/GetType/@type.IdType">
+                            <img src="~/Content/Img/type/@type.Img" />
+                        </a>
                     }
+
                 </td>
                 <td>@Model.Description</td>
                 <td>@Model.Obtention</td>
