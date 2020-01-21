@@ -2,6 +2,7 @@
 using PokeListe.Entities.Infra;
 using PokeListe.Models.Models;
 using PokeListe.Session;
+using PokeListe.Tools;
 using PokeListe.Tools.Mappers;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace PokeListe.Areas.Utilisateur.Controllers
 {
     public class HomeController : Controller
     {
-        public string cnString = ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString;
+        public string cnString = dbConnect.DbString;
 
         // GET: Utilisateur/Home
         public ActionResult Index()

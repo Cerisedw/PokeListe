@@ -4,8 +4,13 @@
         $(target).removeClass('delPoke').addClass('addPoke');
         $(target).html('Ajouter');
     }
-
 }
+
+//function putOnClickDelete() {
+//    $('.delPoke').on("click", (e) => {
+//        fonctionDeleteDB(e.target);
+//    });
+//}
 
 function fonctionDeleteDB(target) {
     let xhr = new XMLHttpRequest();

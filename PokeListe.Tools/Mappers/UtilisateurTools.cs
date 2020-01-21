@@ -62,7 +62,7 @@ namespace PokeListe.Tools.Mappers
 
         public static UtilisateurViewSimple UtilisateurViewToSimple(UtilisateurView uv)
         {
-            UtilisateurPokemonRepository upr = new UtilisateurPokemonRepository(ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString);
+            UtilisateurPokemonRepository upr = new UtilisateurPokemonRepository(dbConnect.DbString);
             return new UtilisateurViewSimple()
             {
                 IdUtilisateur = uv.IdUtilisateur,

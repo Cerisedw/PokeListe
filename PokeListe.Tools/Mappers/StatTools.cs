@@ -29,7 +29,7 @@ namespace PokeListe.Tools.Mappers
 
         public static StatView AddStatToPokemonView (Pokemon pokemon)
         {
-            StatRepository sr = new StatRepository(ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString);
+            StatRepository sr = new StatRepository(dbConnect.DbString);
             return StatToStatView(sr.Get(pokemon.IdStat));
             
         }

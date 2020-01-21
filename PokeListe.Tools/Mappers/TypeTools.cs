@@ -55,13 +55,13 @@ namespace PokeListe.Tools.Mappers
 
         public static List<TypeViewSimple> TypeViewSimpleFromPokemon(Pokemon pokemon)
         {
-            TypePokeRepository tr = new TypePokeRepository(ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString);
+            TypePokeRepository tr = new TypePokeRepository(dbConnect.DbString);
             return ListTypeToListTypeSimple(tr.GetAllFromIdPokemon(pokemon.IdPokemon));
         }
 
         public static TypeView AddListsToType(TypeView typeV)
         {
-            TypePokeRepository tr = new TypePokeRepository(ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString);
+            TypePokeRepository tr = new TypePokeRepository(dbConnect.DbString);
             List<TypeViewSimple> listeFaibl = ListTypeToListTypeSimple(tr.GetAllFaiblesse(typeV.IdType));
             List<TypeViewSimple> listeResist = ListTypeToListTypeSimple(tr.GetAllResist(typeV.IdType));
             List<TypeViewSimple> listeImmun = ListTypeToListTypeSimple(tr.GetAllImmun(typeV.IdType));
