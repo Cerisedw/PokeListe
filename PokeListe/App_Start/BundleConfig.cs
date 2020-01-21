@@ -28,7 +28,9 @@ namespace PokeListe
                       "~/Content/tableau.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/addPoke").Include(
-                      "~/Scripts/AddPokemonToUser.js"));
+                      "~/Scripts/AddPokemonToUser.js",
+                      "~/Scripts/delPoke.js"));
+
         }
     }
 }

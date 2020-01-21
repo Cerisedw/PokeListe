@@ -20,7 +20,7 @@ namespace PokeListe.DAL.Repositories
         private string _insertCommand;
         private string _updateCommand;
         private string _customCommand;
-        private Connection _oconn;
+        protected Connection _oconn;
         private string _cnstr;
 
         protected BaseRepository(string Cnstr)

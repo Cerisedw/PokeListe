@@ -1,4 +1,5 @@
 ﻿using PokeListe.DAL.Repositories;
+using PokeListe.Entities.Infra;
 using PokeListe.Models.Models;
 using PokeListe.Session;
 using PokeListe.Tools.Mappers;
@@ -24,8 +25,10 @@ namespace PokeListe.Areas.Utilisateur.Controllers
 
         public ActionResult AllList()
         {
+            UtilisateurPokemonRepository upr = new UtilisateurPokemonRepository(cnString);
             PokemonRepository pr = new PokemonRepository(cnString);
             List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.GetAll());
+            SessionUtils.ConnectedUser.ListePoke = upr.GetAllFromUser(SessionUtils.ConnectedUser.IdUtilisateur).Select(m => m.IdPokemon).ToList();
             return View(listePoke);
         }
 
@@ -82,6 +85,19 @@ namespace PokeListe.Areas.Utilisateur.Controllers
             int idUt = SessionUtils.ConnectedUser.IdUtilisateur;
             upr.Insert(UtilisateurPokemonTools.CompositeToUtilisateurPoke(idUt, id));
             return View("Index");
+        }
+
+        // retour en string qui retourne Ko ou Ok pour savoir si on peut changer la couleur du bouton ou pas en JS
+        [HttpPost]
+        public string DelPoke(int id)
+        {
+            UtilisateurPokemonRepository upr = new UtilisateurPokemonRepository(cnString);
+            int idUt = SessionUtils.ConnectedUser.IdUtilisateur;
+            if(!upr.DelFromUser(new CompositeKey<int, int>() { PK1 = idUt, PK2 = id }))
+            {
+                return "KO";
+            }
+            return "OK";
         }
     }
 }

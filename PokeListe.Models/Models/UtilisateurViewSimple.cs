@@ -64,5 +64,12 @@ namespace PokeListe.Models.Models
                 _img = value;
             }
         }
+
+        public List<int> ListePoke { get; set; }
+
+        public UtilisateurViewSimple()
+        {
+            ListePoke = new List<int>();
+        }
     }
 }

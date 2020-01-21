@@ -1,7 +1,9 @@
-﻿using PokeListe.Entities.Models;
+﻿using PokeListe.DAL.Repositories;
+using PokeListe.Entities.Models;
 using PokeListe.Models.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,12 +62,14 @@ namespace PokeListe.Tools.Mappers
 
         public static UtilisateurViewSimple UtilisateurViewToSimple(UtilisateurView uv)
         {
+            UtilisateurPokemonRepository upr = new UtilisateurPokemonRepository(ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString);
             return new UtilisateurViewSimple()
             {
                 IdUtilisateur = uv.IdUtilisateur,
                 Pseudo = uv.Pseudo,
                 Email = uv.Email,
-                Img = uv.Img
+                Img = uv.Img,
+                ListePoke = upr.GetAllFromUser(uv.IdUtilisateur).Select(m => m.IdPokemon).ToList()
             };
         }
 

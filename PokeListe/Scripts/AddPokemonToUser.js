@@ -6,7 +6,7 @@ function fonctionClaimDB (pokemonID) {
         if (xhr.readyState === 4) {
             console.log(xhr.status);
             if (xhr.status === 200) {
-                console.log(xhr.responseText);
+                //console.log(xhr.responseText);
             }
         }
     };
@@ -20,8 +20,10 @@ function fonctionClaimDB (pokemonID) {
 
 $('.addPoke').on("click", (e) => {
     fonctionClaimDB(e.target.value);
-    $(e.target).attr("disabled", true);
+    //$(e.target).attr("disabled", true);
     $(e.target).removeClass('btn-danger').addClass('btn-primary');
+    $(e.target).removeClass('addPoke').addClass('delPoke');
+    $(e.target).html('Supprimer');
 });
 
 //console.log($(".addPoke"));

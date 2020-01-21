@@ -6,11 +6,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToolBox.Database;
 
 namespace PokeListe.DAL.Repositories
 {
     public sealed class UtilisateurPokemonRepository : BaseRepository<CompositeKey<int, int>, UtilisateurPokemon>
     {
+        
+
         public UtilisateurPokemonRepository(string Cnstr) : base(Cnstr)
         {
             InsertCommand = "INSERT INTO UtilisateurPokemon(IdUtilisateur, IdPokemon) OUTPUT INSERTED.IdPokemon " +
@@ -41,11 +44,22 @@ namespace PokeListe.DAL.Repositories
             return item;
         }
 
-        //public IEnumerable<UtilisateurPokemon> GetAllFromPokemon(int idUser)
-        //{
-        //    CustomCommand = @"SELECT UtilisateurPokemon.* FROM UtilisateurPokemon INNER JOIN Pokemon ON UtilisateurPokemon.IdPokemon = Pokemon.IdPokemon WHERE UtilisateurPokemon.IdUtilisateur = @Id;";
+        public IEnumerable<UtilisateurPokemon> GetAllFromUser(int idUser)
+        {
+            CustomCommand = @"SELECT UtilisateurPokemon.* FROM UtilisateurPokemon INNER JOIN Pokemon ON UtilisateurPokemon.IdPokemon = Pokemon.IdPokemon WHERE UtilisateurPokemon.IdUtilisateur = @Id;";
+            Command cmd = new Command(CustomCommand);
+            cmd.AddParameter("Id", idUser);
+            return _oconn.ExecuteReader(cmd, createItem);
+        }
 
-        //}
+        public bool DelFromUser(CompositeKey<int, int> idUtPoke)
+        {
+            CustomCommand = @"DELETE FROM UtilisateurPokemon WHERE IdUtilisateur = @IdUtilisateur AND IdPokemon = @IdPokemon;";
+            Command cmd = new Command(CustomCommand);
+            cmd.AddParameter("IdUtilisateur", idUtPoke.PK1);
+            cmd.AddParameter("IdPokemon", idUtPoke.PK2);
+            return _oconn.ExecuteNonQuery(cmd) == 1;
+        }
 
 
         protected override Dictionary<string, object> itemToDictio(UtilisateurPokemon item)
