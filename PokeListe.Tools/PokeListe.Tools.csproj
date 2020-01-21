@@ -45,6 +45,7 @@
     <Compile Include="Mappers\PokemonTools.cs" />
     <Compile Include="Mappers\StatTools.cs" />
     <Compile Include="Mappers\TypeTools.cs" />
+    <Compile Include="Mappers\UtilisateurPokemonTools.cs" />
     <Compile Include="Mappers\UtilisateurTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

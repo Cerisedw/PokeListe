@@ -47,6 +47,7 @@
     <Compile Include="Repositories\PokemonRepository.cs" />
     <Compile Include="Repositories\StatRepository.cs" />
     <Compile Include="Repositories\TypePokeRepository.cs" />
+    <Compile Include="Repositories\UtilisateurPokemonRepository.cs" />
     <Compile Include="Repositories\UtilisateurRepository.cs" />
   </ItemGroup>
   <ItemGroup>

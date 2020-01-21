@@ -19,7 +19,17 @@ namespace PokeListe.Tools.Mappers
             {
                 IdType = type.id,
                 Nom = type.Nom,
-                Img = type.Img
+                Img = type.Img,
+            };
+        }
+
+        public static TypeViewSimple TypeToTypeSimple(TypePoke type)
+        {
+            return new TypeViewSimple()
+            {
+                IdType = type.id,
+                Nom = type.Nom,
+                Img = type.Img,
             };
         }
 
@@ -33,10 +43,32 @@ namespace PokeListe.Tools.Mappers
             return listeView;
         }
 
-        public static List<TypeView> TypeViewFromPokemon(Pokemon pokemon)
+        public static List<TypeViewSimple> ListTypeToListTypeSimple(IEnumerable<TypePoke> listeTypes)
+        {
+            List<TypeViewSimple> listeView = new List<TypeViewSimple>();
+            foreach (TypePoke type in listeTypes)
+            {
+                listeView.Add(TypeToTypeSimple(type));
+            }
+            return listeView;
+        }
+
+        public static List<TypeViewSimple> TypeViewSimpleFromPokemon(Pokemon pokemon)
         {
             TypePokeRepository tr = new TypePokeRepository(ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString);
-            return ListTypeToListTypeView(tr.GetAllFromIdPokemon(pokemon.IdPokemon));
+            return ListTypeToListTypeSimple(tr.GetAllFromIdPokemon(pokemon.IdPokemon));
+        }
+
+        public static TypeView AddListsToType(TypeView typeV)
+        {
+            TypePokeRepository tr = new TypePokeRepository(ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString);
+            List<TypeViewSimple> listeFaibl = ListTypeToListTypeSimple(tr.GetAllFaiblesse(typeV.IdType));
+            List<TypeViewSimple> listeResist = ListTypeToListTypeSimple(tr.GetAllResist(typeV.IdType));
+            List<TypeViewSimple> listeImmun = ListTypeToListTypeSimple(tr.GetAllImmun(typeV.IdType));
+            typeV.Faiblesse = listeFaibl;
+            typeV.Resistance = listeResist;
+            typeV.Immunite = listeImmun;
+            return typeV;
         }
 
     }

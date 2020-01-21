@@ -15,7 +15,9 @@ namespace PokeListe.DAL.Repositories
             InsertCommand = "INSERT INTO Utilisateur(Pseudo, Email, Mdp, Img) " +
                 "OUTPUT INSERTED.IdUtilisateur " +
                 "VALUES(@Pseudo, @Email, @Mdp, @Img);";
-            UpdateCommand = "";
+            UpdateCommand = "UPDATE  Utilisateur SET Pseudo = @Pseudo, " +
+                "Email = @Email,  Mdp = @Mdp, Img = @Img " +
+                "WHERE IdUtilisateur = @IdUtilisateur;";
         }
         public override bool Delete(int key)
         {
@@ -46,6 +48,8 @@ namespace PokeListe.DAL.Repositories
             Dictionary<string, object> Parameters = itemToDictio(item);
             return base.getByLogin(Parameters, createItem);
         }
+
+
 
         protected override Dictionary<string, object> itemToDictio(Utilisateur item)
         {

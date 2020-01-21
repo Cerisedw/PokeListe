@@ -8,13 +8,13 @@ namespace PokeListe.Session
 {
     public static class SessionUtils
     {
-        public static UtilisateurView ConnectedUser
+        public static UtilisateurViewSimple ConnectedUser
         {
             get
             {
                 if (HttpContext.Current.Session["ConnectedUser"] != null)
                 {
-                    return (UtilisateurView)HttpContext.Current.Session["ConnectedUser"];
+                    return (UtilisateurViewSimple)HttpContext.Current.Session["ConnectedUser"];
                 }
                 return null;
             }

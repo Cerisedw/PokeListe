@@ -162,7 +162,7 @@ namespace PokeListe.DAL.Repositories
             return _oconn.ExecuteNonQuery(cmd) == 1;
         }
 
-        protected IEnumerable<T> getAllFromIdPokemon(TKey key, Func<SqlDataReader, T> maFonction)
+        protected IEnumerable<T> getAllFromCustomCommand(TKey key, Func<SqlDataReader, T> maFonction)
         {
             Command cmd = new Command(CustomCommand);
             cmd.AddParameter("Id", key);

@@ -44,10 +44,13 @@
   <ItemGroup>
     <Compile Include="Models\LoginUtilisateur.cs" />
     <Compile Include="Models\PokemonView.cs" />
+    <Compile Include="Models\PokemonViewBool.cs" />
     <Compile Include="Models\RegisterUtilisateur.cs" />
     <Compile Include="Models\StatView.cs" />
     <Compile Include="Models\TypeView.cs" />
+    <Compile Include="Models\TypeViewSimple.cs" />
     <Compile Include="Models\UtilisateurView.cs" />
+    <Compile Include="Models\UtilisateurViewSimple.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2>Modifier mon profil :</h2></br>
+<form method="post" action="/Utilisateur/Home/Update" enctype="multipart/form-data">
+    <label>Pseudo</label>
+    <input type="text" name="Pseudo" value="@PokeListe.Session.SessionUtils.ConnectedUser.Pseudo" /></br>
+    <label>Email</label>
+    <input type="text" name="Email" value="@PokeListe.Session.SessionUtils.ConnectedUser.Email" /></br>
+    <label>Mot de passe</label>
+    <input type="password" name="Mdp" /></br>
+    <input type="file" name="file" id="file"><br />
+    <button type="submit">Envoyer</button>
+    @if (@ViewBag.ErrorLoginMessage != null)
+    {
+
+        <center>
+            <p class="alert alert-danger">@Html.Raw(ViewBag.ErrorLoginMessage)</p>
+        </center>
+    }
+
+</form>

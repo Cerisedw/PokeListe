@@ -51,8 +51,8 @@ namespace PokeListe.Models.Models
             }
         }
 
-        public List<Type> Faiblesse { get; set; }
-        public List<Type> Resistance { get; set; }
-        public List<Type> Immunite { get; set; }
+        public List<TypeViewSimple> Faiblesse { get; set; }
+        public List<TypeViewSimple> Resistance { get; set; }
+        public List<TypeViewSimple> Immunite { get; set; }
     }
 }

@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Liste Pokémons</h2>
+
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody id="listePoke">
+
+            @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
+            {
+                <tr>
+                    <td>@pokemon.Numero</td>
+                    <td>
+                        <a href="~/Home/Get/@pokemon.IdPokemon">
+                            <img src="~/Content/Img/pokedex/@pokemon.Img" />
+                        </a>
+                    </td>
+                    <td>@pokemon.Nom</td>
+                    <td>
+                        @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
+                        {
+                            <a href="~/Home/GetType/@type.IdType">
+                                <img src="~/Content/Img/type/@type.Img" />
+                            </a>
+                        }
+                    </td>
+                    <td><a href="/Home/Get/@pokemon.IdPokemon">Details</a></td>
+                    <td><button class="btn btn-danger addPoke" value="@pokemon.IdPokemon">Ajouter</button></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/addPoke")
+}
+

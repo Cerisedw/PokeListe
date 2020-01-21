@@ -24,7 +24,21 @@ namespace PokeListe.Tools.Mappers
                 Obtention = poke.Obtention,
                 IdStat = poke.IdStat,
                 Stat = StatTools.AddStatToPokemonView(poke),
-                Types = TypeTools.TypeViewFromPokemon(poke)
+                Types = TypeTools.TypeViewSimpleFromPokemon(poke)
+            };
+        }
+
+        public static PokemonViewBool PokeToPokeBool(Pokemon poke)
+        {
+            return new PokemonViewBool()
+            {
+                IdPokemon = poke.id,
+                Nom = poke.Nom,
+                Numero = poke.Numero,
+                Img = poke.Img,
+                Types = TypeTools.TypeViewSimpleFromPokemon(poke),
+                //Obtenu = UtilisateurPokemonTools.AddBoolObtenu(poke.);
+
             };
         }
 
@@ -36,6 +50,16 @@ namespace PokeListe.Tools.Mappers
                 listePokeView.Add(PokeToPokeView(poke));
             }
             return listePokeView;
+        }
+
+        public static List<PokemonViewBool> ListToListePokeBool(IEnumerable<Pokemon> listePoke)
+        {
+            List<PokemonViewBool> listeBool = new List<PokemonViewBool>();
+            foreach (Pokemon poke in listePoke)
+            {
+                listeBool.Add(PokeToPokeBool(poke));
+            }
+            return listeBool;
         }
     }
 

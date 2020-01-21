@@ -4,5 +4,50 @@
 }
 
 <h2>@Model.Nom</h2>
-<img src="~/Content/Img/type/@Model.Img" />
+<img src="~/Content/Img/type/@Model.Img" /><br /><br />
+
+
+<div class="row">
+    <table>
+        <thead>
+                <tr>
+                    <th>Faiblesse</th>
+                    <th>Résistance</th>
+                    <th>Immunité</th>
+                </tr>
+            </thead>
+        <tbody id="listePoke">
+            <tr>
+                <td>
+                    @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Faiblesse)
+                    {
+
+                        <a href="~/Home/GetType/@type.IdType">
+                            <img src="~/Content/Img/type/@type.Img" />
+                        </a>
+                    }
+                </td>
+                <td>
+                    @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Resistance)
+                    {
+
+                        <a href="~/Home/GetType/@type.IdType">
+                            <img src="~/Content/Img/type/@type.Img" />
+                        </a>
+                    }
+                </td>
+                <td>
+                    @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Immunite)
+                    {
+
+                        <a href="~/Home/GetType/@type.IdType">
+                            <img src="~/Content/Img/type/@type.Img" />
+                        </a>
+                    }
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
 

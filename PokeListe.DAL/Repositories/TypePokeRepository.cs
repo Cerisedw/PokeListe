@@ -38,7 +38,24 @@ namespace PokeListe.DAL.Repositories
         public IEnumerable<TypePoke> GetAllFromIdPokemon(int key)
         {
             CustomCommand = @"SELECT Type.* FROM Type INNER JOIN PokemonType ON Type.IdType = PokemonType.IdType WHERE PokemonType.IdPokemon = @Id;";
-            return base.getAllFromIdPokemon(key, createItem);
+            return base.getAllFromCustomCommand(key, createItem);
+        }
+
+        public IEnumerable<TypePoke> GetAllFaiblesse(int key)
+        {
+            CustomCommand = @"SELECT Type.* FROM Type INNER JOIN Faiblesse ON Type.IdType = Faiblesse.TypeB WHERE Faiblesse.TypeA = @Id;";
+            return base.getAllFromCustomCommand(key, createItem);
+        }
+
+        public IEnumerable<TypePoke> GetAllResist(int key)
+        {
+            CustomCommand = @"SELECT Type.* FROM Type INNER JOIN Resistance ON Type.IdType = Resistance.TypeB WHERE Resistance.TypeA = @Id;";
+            return base.getAllFromCustomCommand(key, createItem);
+        }
+        public IEnumerable<TypePoke> GetAllImmun(int key)
+        {
+            CustomCommand = @"SELECT Type.* FROM Type INNER JOIN Immunite ON Type.IdType = Immunite.TypeB WHERE Immunite.TypeA = @Id;";
+            return base.getAllFromCustomCommand(key, createItem);
         }
 
         protected override Dictionary<string, object> itemToDictio(TypePoke item)

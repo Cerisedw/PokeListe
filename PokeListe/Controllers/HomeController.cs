@@ -18,6 +18,10 @@ namespace PokeListe.Controllers
         public string cnString = ConfigurationManager.ConnectionStrings["CnstrDev"].ConnectionString;
         public ActionResult Index()
         {
+            if (SessionUtils.IsConnected == true)
+            {
+                return RedirectToAction("AllList", new { controller = "Home", area = "Utilisateur" });
+            }
             PokemonRepository pr = new PokemonRepository(cnString);
             List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.GetAll());
             return View(listePoke);
@@ -32,13 +36,14 @@ namespace PokeListe.Controllers
         public ActionResult AllTypes()
         {
             TypePokeRepository tr = new TypePokeRepository(cnString);
-            List<TypeView> listeTypes = TypeTools.ListTypeToListTypeView(tr.GetAll());
+            List<TypeViewSimple> listeTypes = TypeTools.ListTypeToListTypeSimple(tr.GetAll());
             return View(listeTypes);
         }
         public ActionResult GetType(int id)
         {
             TypePokeRepository tr = new TypePokeRepository(cnString);
             TypeView type = TypeTools.TypeToTypeView(tr.Get(id));
+            TypeTools.AddListsToType(type);
             return View(type);
         }
 
@@ -55,9 +60,9 @@ namespace PokeListe.Controllers
             if(utilisateurLog != null)
             {
                 SessionUtils.IsConnected = true;
-                SessionUtils.ConnectedUser = utilisateurLog;
+                SessionUtils.ConnectedUser = UtilisateurTools.UtilisateurViewToSimple(utilisateurLog);
                 //return RedirectToAction("", new { controller = "Home", area = "Utilisateur" });
-                return RedirectToAction("Index", new { controller = "Home", area = "" });
+                return RedirectToAction("Index", new { controller = "Home", area = "Utilisateur" });
             }
             else
             {
@@ -70,7 +75,14 @@ namespace PokeListe.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterUtilisateur reUt, HttpPostedFileBase file)
         {
-            if (file.ContentLength > 150000)
+            List<string> matchContentType = new List<string>() { "image/jpeg", "image/png", "image/gif" };
+            if (!matchContentType.Contains(file.ContentType))
+            {
+                ViewBag.ErrorMessage = "Le fichier ne possède pas une extension autorisée (png, jpg,gif).";
+                return View("Login");
+
+            }
+            else if (file.ContentLength > 150000)
             {
                 ViewBag.ErrorMessage = "Le fichier est trop lourd.";
                 return View("Login");

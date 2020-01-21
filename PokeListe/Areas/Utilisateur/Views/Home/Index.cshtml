@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@PokeListe.Session.SessionUtils.ConnectedUser.Pseudo</h2>
+
+
+<img src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
+<p>@PokeListe.Session.SessionUtils.ConnectedUser.Email</p>
+
+<a href="/Utilisateur/Home/Update">Modifier mon profil</a>

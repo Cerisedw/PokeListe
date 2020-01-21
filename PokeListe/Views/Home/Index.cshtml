@@ -27,7 +27,7 @@
                 </td>
                 <td>@pokemon.Nom</td>
                 <td>
-                    @foreach (PokeListe.Models.Models.TypeView type in pokemon.Types)
+                    @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
                     {
                         <a href="~/Home/GetType/@type.IdType">
                             <img src="~/Content/Img/type/@type.Img" />
