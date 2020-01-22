@@ -37,11 +37,11 @@
                     <td><a href="/Home/Get/@pokemon.IdPokemon">Details</a></td>
                     @if (PokeListe.Session.SessionUtils.ConnectedUser.ListePoke.Contains(pokemon.IdPokemon))
                     {
-                        <td><button class="btn btn-primary delPoke" value="@pokemon.IdPokemon">Supprimer</button></td>
+                        <td><button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Supprimer</button></td>
                     }
                     else
                     {
-                        <td><button class="btn btn-danger addPoke" value="@pokemon.IdPokemon">Ajouter</button></td>
+                        <td><button class="btn btn-danger addPoke actionPoke" value="@pokemon.IdPokemon">Ajouter</button></td>
                     }
                 </tr>
             }

@@ -174,7 +174,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\AddPokemonToUser.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\tableau.css" />
@@ -186,7 +185,7 @@
     <Content Include="Areas\Utilisateur\Views\Home\Update.cshtml" />
     <Content Include="Areas\Utilisateur\Views\Home\AllList.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\delPoke.js" />
+    <Content Include="Scripts\buttonEventPokeUser.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
