@@ -21,7 +21,9 @@ namespace PokeListe.Areas.Utilisateur.Controllers
         // GET: Utilisateur/Home
         public ActionResult Index()
         {
-            return View();
+            PokemonRepository pr = new PokemonRepository(cnString);
+            List<PokemonView> pokemonList = PokemonTools.ListPokeToListPokeView(pr.getAllFromUser(SessionUtils.ConnectedUser.IdUtilisateur));
+            return View(pokemonList);
         }
 
         public ActionResult AllList()
@@ -80,12 +82,15 @@ namespace PokeListe.Areas.Utilisateur.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddPoke(int id)
+        public string AddPoke(int id)
         {
             UtilisateurPokemonRepository upr = new UtilisateurPokemonRepository(cnString);
             int idUt = SessionUtils.ConnectedUser.IdUtilisateur;
-            upr.Insert(UtilisateurPokemonTools.CompositeToUtilisateurPoke(idUt, id));
-            return View("Index");
+            if (upr.Insert(UtilisateurPokemonTools.CompositeToUtilisateurPoke(idUt, id)) == null)
+            {
+                return "KO";
+            }
+            return "OK";
         }
 
         // retour en string qui retourne Ko ou Ok pour savoir si on peut changer la couleur du bouton ou pas en JS

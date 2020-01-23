@@ -34,7 +34,7 @@
                             </a>
                         }
                     </td>
-                    <td><a href="/Home/Get/@pokemon.IdPokemon">Details</a></td>
+                    @*<td><a href="/Home/Get/@pokemon.IdPokemon">Details</a></td>*@
                     @if (PokeListe.Session.SessionUtils.ConnectedUser.ListePoke.Contains(pokemon.IdPokemon))
                     {
                         <td><button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Supprimer</button></td>

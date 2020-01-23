@@ -41,6 +41,12 @@ namespace PokeListe.DAL.Repositories
 
         }
 
+        public IEnumerable<Pokemon> getAllFromUser(int idUser)
+        {
+            CustomCommand = "SELECT Pokemon.* FROM Pokemon INNER JOIN UtilisateurPokemon ON Pokemon.IdPokemon = UtilisateurPokemon.IdPokemon WHERE UtilisateurPokemon.IdUtilisateur = @Id;";
+            return base.getAllFromCustomCommand(idUser, createItem);
+        }
+
         // Methode du repo
         // Transforme un objet en dictionnaire pour le Base Repository
         protected override Dictionary<string, object> itemToDictio(Pokemon item)

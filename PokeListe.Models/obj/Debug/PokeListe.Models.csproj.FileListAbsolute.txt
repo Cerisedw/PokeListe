@@ -4,3 +4,9 @@ C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Model
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Models\obj\Debug\PokeListe.Models.csproj.CoreCompileInputs.cache
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Models\obj\Debug\PokeListe.Models.dll
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Models\obj\Debug\PokeListe.Models.pdb
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Models\bin\Debug\PokeListe.Models.dll
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Models\bin\Debug\PokeListe.Models.pdb
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Models\obj\Debug\PokeListe.Models.csprojAssemblyReference.cache
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Models\obj\Debug\PokeListe.Models.csproj.CoreCompileInputs.cache
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Models\obj\Debug\PokeListe.Models.dll
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Models\obj\Debug\PokeListe.Models.pdb

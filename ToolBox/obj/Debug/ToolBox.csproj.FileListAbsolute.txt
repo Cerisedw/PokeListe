@@ -37,3 +37,9 @@ C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\ToolBox\obj\Deb
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\ToolBox\obj\Debug\ToolBox.csproj.CoreCompileInputs.cache
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\ToolBox\obj\Debug\ToolBox.dll
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\ToolBox\obj\Debug\ToolBox.pdb
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\bin\Debug\ToolBox.dll
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\bin\Debug\ToolBox.pdb
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox.csprojAssemblyReference.cache
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox.csproj.CoreCompileInputs.cache
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox.dll
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox.pdb

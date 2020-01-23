@@ -31,7 +31,8 @@ namespace PokeListe
                       //"~/Scripts/AddPokemonToUser.js",
                       //"~/Scripts/delPoke.js",
                       "~/Scripts/buttonEventPokeUser.js"));
-
+            bundles.Add(new ScriptBundle("~/bundles/delFromProfil").Include(
+                "~/Scripts/delFromProfil.js"));
         }
     }
 }

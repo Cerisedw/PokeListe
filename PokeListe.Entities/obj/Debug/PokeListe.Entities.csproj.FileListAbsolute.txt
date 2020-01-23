@@ -4,3 +4,9 @@ C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Entit
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Entities\obj\Debug\PokeListe.Entities.csproj.CoreCompileInputs.cache
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Entities\obj\Debug\PokeListe.Entities.dll
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe\PokeListe.Entities\obj\Debug\PokeListe.Entities.pdb
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Entities\bin\Debug\PokeListe.Entities.dll
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Entities\bin\Debug\PokeListe.Entities.pdb
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Entities\obj\Debug\PokeListe.Entities.csprojAssemblyReference.cache
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Entities\obj\Debug\PokeListe.Entities.csproj.CoreCompileInputs.cache
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Entities\obj\Debug\PokeListe.Entities.dll
+C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\PokeListe.Entities\obj\Debug\PokeListe.Entities.pdb
