@@ -72,7 +72,7 @@ namespace PokeListe.Areas.Utilisateur.Controllers
             if (ur.Update(UtilisateurTools.UtilisateurViewToUtilisateur(u)))
             {
                 SessionUtils.ConnectedUser = UtilisateurTools.UtilisateurViewToSimple(u);
-                return View("Index");
+                return RedirectToAction("Index", new { controller = "Home", area = "Utilisateur" });
             }
             else
             {
