@@ -17,10 +17,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("PokeListe", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Liste des Types", "AllTypes", "Home")
+                    </li>
+                </ul>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav right">
-                    <li>@Html.ActionLink("Liste des Types", "AllTypes", "Home")</li>
                     @if (PokeListe.Session.SessionUtils.ConnectedUser == null)
                     {
                         <li>@Html.ActionLink("LogIn", "Login", "Home")</li>
@@ -29,13 +33,13 @@
                     {
                         <li>@Html.ActionLink("LogOff", "LogOff", "Home")</li>
                     }
-                </ul>
                 @if (PokeListe.Session.SessionUtils.ConnectedUser != null)
                 {
                     <a href="/Utilisateur/Home">
-                        <img style="width:50px;" src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
+                        <img src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
                     </a>
                 }
+                </ul>
             </div>
            
         </div>

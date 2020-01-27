@@ -37,8 +37,6 @@ namespace PokeListe.Tools.Mappers
                 Numero = poke.Numero,
                 Img = poke.Img,
                 Types = TypeTools.TypeViewSimpleFromPokemon(poke),
-                //Obtenu = UtilisateurPokemonTools.AddBoolObtenu(poke.);
-
             };
         }
 

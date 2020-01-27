@@ -3,27 +3,47 @@
 }
 
 <h2>Liste Pokémons</h2>
+<div class="container" style="max-width: 250px; float:right;">
+    <h4>Filtrer</h4>
+    <a href="~/Home/">Tous</a>
+    <table>
+        <tbody>
+            @foreach (PokeListe.Models.Models.TypeViewSimple type in PokeListe.Session.SessionUtils.listTypes)
+            {
+                <tr>
+                    <td>
+                        <a href="~/Home/FilterByType/@type.IdType">
+                            <img src="~/Content/Img/type/@type.Img" />
+                        </a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+</div>
 
 <div id="content">
     @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
     {
-    <div class="vignette">
-        <a href="~/Home/Get/@pokemon.IdPokemon">
-            <div>
-                <img src="~/Content/Img/pokedex/@pokemon.Img" />
+        <div class="vignette">
+            <a href="~/Home/Get/@pokemon.IdPokemon">
+                <div>
+                    <img src="~/Content/Img/pokedex/@pokemon.Img" />
                 </div>
-            <div >
-                <span>@pokemon.Numero</span>
-                <h4>@pokemon.Nom</h4>
-            </div>
-        </a>
-        @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
-        {
-            <a href="~/Home/GetType/@type.IdType">
-                <img src="~/Content/Img/type/@type.Img" />
+                <div>
+                    <span>@pokemon.Numero</span>
+                    <h4>@pokemon.Nom</h4>
+                </div>
             </a>
-        }
-    </div>
+            @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
+            {
+                <a href="~/Home/GetType/@type.IdType">
+                    <img src="~/Content/Img/type/@type.Img" />
+                </a>
+            }
+        </div>
     }
 
 </div>

@@ -23,6 +23,8 @@ namespace PokeListe.Controllers
             {
                 return RedirectToAction("AllList", new { controller = "Home", area = "Utilisateur" });
             }
+            TypePokeRepository tpr = new TypePokeRepository(cnString);
+            SessionUtils.listTypes = TypeTools.ListTypeToListTypeSimple(tpr.GetAll());
             PokemonRepository pr = new PokemonRepository(cnString);
             List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.GetAll());
             return View(listePoke);
@@ -138,6 +140,14 @@ namespace PokeListe.Controllers
 
             return RedirectToAction("Index", new { controller = "Home", area = "" });
         }
+
+        public ActionResult FilterByType(int id)
+        {
+            PokemonRepository pr = new PokemonRepository(cnString);
+            List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.getAllFromType(id));
+            return View("Index", listePoke);
+        }
+
 
 
     }
