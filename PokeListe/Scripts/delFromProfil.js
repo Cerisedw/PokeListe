@@ -6,7 +6,7 @@
 
 
 function deleteRow(target) {
-    $(target).parent().parent().remove();
+    $(target).parent().remove();
 }
 
 function fonctionDeleteDB(target) {

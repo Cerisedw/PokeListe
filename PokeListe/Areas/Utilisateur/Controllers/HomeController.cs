@@ -30,6 +30,8 @@ namespace PokeListe.Areas.Utilisateur.Controllers
         {
             UtilisateurPokemonRepository upr = new UtilisateurPokemonRepository(cnString);
             PokemonRepository pr = new PokemonRepository(cnString);
+            TypePokeRepository tpr = new TypePokeRepository(cnString);
+            SessionUtils.listTypes = TypeTools.ListTypeToListTypeSimple(tpr.GetAll());
             List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.GetAll());
             SessionUtils.ConnectedUser.ListePoke = upr.GetAllFromUser(SessionUtils.ConnectedUser.IdUtilisateur).Select(m => m.IdPokemon).ToList();
             return View(listePoke);
@@ -104,6 +106,14 @@ namespace PokeListe.Areas.Utilisateur.Controllers
                 return "KO";
             }
             return "OK";
+        }
+
+
+        public ActionResult FilterByType(int id)
+        {
+            PokemonRepository pr = new PokemonRepository(cnString);
+            List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.getAllFromType(id));
+            return View("AllList", listePoke);
         }
     }
 }

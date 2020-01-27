@@ -5,15 +5,32 @@
     margin: 10px;
     padding: 20px;
     text-align: center;
-    /*width: 100px;*/
+    max-width: 150px;
 
 
 }
-    .vignette h4 {
-        line-height: 0;
-    }
+.vignette h4 {
+    line-height: 0;
+}
 
+.vignette:hover {
+    background-color: #aa798b;
+    /*cursor: pointer;*/
+    user-select: none;
+    color: white;
+}
 
+.vignette button {
+    margin: 10px 0 0 0;
+}
+
+.vignette a {
+    text-decoration: none;
+    color: #333333;
+}
+.vignette a:hover {
+    color: white;
+}
 #content {
     display: flex;
     flex-wrap: wrap;
@@ -31,3 +48,10 @@
     display: block;
     text-decoration: none;
 }
+
+.right {
+    float: right;
+}
+    .right img {
+        width: 50px;
+    }

@@ -34,6 +34,19 @@ namespace PokeListe.Session
             set { HttpContext.Current.Session["IsConnected"] = value; }
         }
 
+        public static List<TypeViewSimple> listTypes
+        {
+            get
+            {
+                if (HttpContext.Current.Session["listeTypes"] != null)
+                {
+                    return (List<TypeViewSimple>)HttpContext.Current.Session["listeTypes"];
+                }
+                return null;
+            }
+            set { HttpContext.Current.Session["listeTypes"] = value; }
+        }
+
     }
 
 }

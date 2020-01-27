@@ -19,7 +19,7 @@
                 @Html.ActionLink("PokeListe", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav right">
                     <li>@Html.ActionLink("Liste des Types", "AllTypes", "Home")</li>
                     @if (PokeListe.Session.SessionUtils.ConnectedUser == null)
                     {

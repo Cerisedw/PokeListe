@@ -2,48 +2,48 @@
 @{
     ViewBag.Title = "Index";
 }
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>@PokeListe.Session.SessionUtils.ConnectedUser.Pseudo</h2>
 
-<h2>@PokeListe.Session.SessionUtils.ConnectedUser.Pseudo</h2>
 
+            <img style="width:350px;" src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
+            <p>@PokeListe.Session.SessionUtils.ConnectedUser.Email</p>
 
-<img src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
-<p>@PokeListe.Session.SessionUtils.ConnectedUser.Email</p>
+            <a href="/Utilisateur/Home/Update">Modifier mon profil</a>
+        </div>
 
-<a href="/Utilisateur/Home/Update">Modifier mon profil</a>
-
-<div class="row">
-    <table>
-        <thead>
-            <tr>
-                <th>Img</th>
-                <th>Nom</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody id="listePoke">
-            @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
-            {
-                <tr>
-                    <td>
+        <div class="col-sm-6">
+            <h3>Mes Pokémons</h3>
+            <div id="content">
+                @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
+                {
+                    <div class="vignette">
                         <a href="~/Home/Get/@pokemon.IdPokemon">
-                            <img src="~/Content/Img/pokedex/@pokemon.Img" />
+                            <div>
+                                <img src="~/Content/Img/pokedex/@pokemon.Img" />
+                            </div>
+                            <div>
+                                <span>@pokemon.Numero</span>
+                                <h4>@pokemon.Nom</h4>
+                            </div>
                         </a>
-                    </td>
-                    <td>@pokemon.Nom</td>
-                    <td>
                         @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
                         {
                             <a href="~/Home/GetType/@type.IdType">
                                 <img src="~/Content/Img/type/@type.Img" />
                             </a>
                         }
-                    </td>
-                    <td><button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Supprimer</button></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
+                        <button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Supprimer</button>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
 
 @section scripts
 {

@@ -21,14 +21,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/Home/AllTypes">Liste des Types</a></li>
-                    <li><a href="/Home/LogOff">LogOff</a></li>
-                    @*<li>@Html.ActionLink("LogOff", "LogOff", "Home", new { area = "" })</li>*@
                 </ul>
                 @if (PokeListe.Session.SessionUtils.ConnectedUser != null)
                 {
-                    <a href="/Utilisateur/Home">
-                        <img style="width:50px;" src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
-                    </a>
+                    <ul class="nav navbar-nav right" >
+                        <li>
+                            <a href="/Home/LogOff" >LogOff</a>
+                        </li>
+                            <a href="/Utilisateur/Home">
+                                <img src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
+                            </a>
+                    </ul>
                 }
             </div>
 

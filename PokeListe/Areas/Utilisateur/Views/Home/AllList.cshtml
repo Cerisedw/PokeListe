@@ -3,51 +3,59 @@
 }
 
 <h2>Liste Pokémons</h2>
-
-<div class="row">
+<div class="container" style="max-width: 250px; float:right;">
+    <h4>Filtrer</h4>
+    <a href="~/Utilisateur/Home/AllList">Tous</a>
     <table>
-        <thead>
-            <tr>
-                <th>N°</th>
-                <th>Image</th>
-                <th>Nom</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody id="listePoke">
-
-            @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
+        <tbody>
+            @foreach (PokeListe.Models.Models.TypeViewSimple type in PokeListe.Session.SessionUtils.listTypes)
             {
                 <tr>
-                    <td>@pokemon.Numero</td>
                     <td>
-                        <a href="~/Home/Get/@pokemon.IdPokemon">
-                            <img src="~/Content/Img/pokedex/@pokemon.Img" />
+                        <a href="~/Utilisateur/Home/FilterByType/@type.IdType">
+                            <img src="~/Content/Img/type/@type.Img" />
                         </a>
                     </td>
-                    <td>@pokemon.Nom</td>
-                    <td>
-                        @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
-                        {
-                            <a href="~/Home/GetType/@type.IdType">
-                                <img src="~/Content/Img/type/@type.Img" />
-                            </a>
-                        }
-                    </td>
-                    @*<td><a href="/Home/Get/@pokemon.IdPokemon">Details</a></td>*@
-                    @if (PokeListe.Session.SessionUtils.ConnectedUser.ListePoke.Contains(pokemon.IdPokemon))
-                    {
-                        <td><button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Supprimer</button></td>
-                    }
-                    else
-                    {
-                        <td><button class="btn btn-danger addPoke actionPoke" value="@pokemon.IdPokemon">Ajouter</button></td>
-                    }
                 </tr>
-            }
 
+            }
         </tbody>
     </table>
+
+</div>
+
+
+<div id="content">
+    @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
+    {
+    <div class="vignette">
+        <a href="~/Home/Get/@pokemon.IdPokemon">
+            <div>
+                <img src="~/Content/Img/pokedex/@pokemon.Img" />
+            </div>
+            <div>
+                <span>@pokemon.Numero</span>
+                <h4>@pokemon.Nom</h4>
+            </div>
+        </a>
+        @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
+        {
+            <a href="~/Home/GetType/@type.IdType">
+                <img src="~/Content/Img/type/@type.Img" />
+            </a>
+        }
+                @if (PokeListe.Session.SessionUtils.ConnectedUser.ListePoke.Contains(pokemon.IdPokemon))
+                {
+                    <button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Supprimer</button>
+                }
+                else
+                {
+                    <button class="btn btn-danger addPoke actionPoke" value="@pokemon.IdPokemon">Ajouter</button>
+                }
+
+
+        </div>
+    }
 
 </div>
 @section scripts
