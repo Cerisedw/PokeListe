@@ -33,12 +33,20 @@
                     {
                         <li>@Html.ActionLink("LogOff", "LogOff", "Home")</li>
                     }
-                @if (PokeListe.Session.SessionUtils.ConnectedUser != null)
-                {
-                    <a href="/Utilisateur/Home">
-                        <img src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
-                    </a>
-                }
+                    @if (PokeListe.Session.SessionUtils.isAdmin)
+                    {
+                        <li>
+                            <a href="/Admin/Home/">Ajout Pokémon</a>
+                        </li>
+
+                    }
+                    @if (PokeListe.Session.SessionUtils.ConnectedUser != null)
+                    {
+
+                        <a href="/Utilisateur/Home">
+                            <img src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
+                        </a>
+                    }
                 </ul>
             </div>
            

@@ -59,6 +59,27 @@ namespace PokeListe.Tools.Mappers
             }
             return listeBool;
         }
+
+        public static AjoutPokemon AddPokeToAjoutPoke(AddPokemon ap)
+        {
+            return new AjoutPokemon()
+            {
+                Nom = ap.Nom,
+                Numero = ap.Numero,
+                Description = ap.Description,
+                Img = ap.Img,
+                Obtention = ap.Obtention,
+                Hp = ap.Hp,
+                Atk = ap.Atk,
+                Def = ap.Def,
+                AtkSpe = ap.AtkSpe,
+                DefSpe = ap.DefSpe,
+                Vit = ap.Vit,
+                IdType1 = ap.Type1,
+                IdType2 = ap.Type2
+            };
+        }
+
     }
 
 }

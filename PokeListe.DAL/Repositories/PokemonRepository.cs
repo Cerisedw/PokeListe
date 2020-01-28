@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToolBox.Database;
 
 namespace PokeListe.DAL.Repositories
 {
@@ -52,6 +53,28 @@ namespace PokeListe.DAL.Repositories
             return base.getAllFromCustomCommand(idType, createItem);
         }
 
+        public int insertPokemon(AjoutPokemon ap)
+        {
+            CustomCommand = "EXEC AjoutPoke @Nom, @Numero, @Description, @Img, @Obtention, @Hp, @Atk, @Def, @AtkSpe, @DefSpe, @Vit, @IdType1, @IdType2;";
+            Command cmd = new Command(CustomCommand);
+            cmd.AddParameter("Nom", ap.Nom);
+            cmd.AddParameter("Numero", ap.Numero);
+            cmd.AddParameter("Description", ap.Description);
+            cmd.AddParameter("Img", ap.Img);
+            cmd.AddParameter("Obtention", ap.Obtention);
+            cmd.AddParameter("Hp", ap.Hp);
+            cmd.AddParameter("Atk", ap.Atk);
+            cmd.AddParameter("Def", ap.Def);
+            cmd.AddParameter("AtkSpe", ap.AtkSpe);
+            cmd.AddParameter("DefSpe", ap.DefSpe);
+            cmd.AddParameter("Vit", ap.Vit);
+            cmd.AddParameter("IdType1", ap.IdType1);
+            cmd.AddParameter("IdType2", ap.IdType2);
+            int id =  (int)_oconn.ExecuteScalar(cmd);
+            return id;
+
+        }
+
         // Methode du repo
         // Transforme un objet en dictionnaire pour le Base Repository
         protected override Dictionary<string, object> itemToDictio(Pokemon item)
@@ -66,6 +89,7 @@ namespace PokeListe.DAL.Repositories
             dictio["IdStat"] = item.IdStat;
             return dictio;
         }
+
 
         // Méthode qu'on envoit au Base Repository pour créer l'objet Membre
         private Pokemon createItem(SqlDataReader d)

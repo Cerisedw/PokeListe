@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@if (ViewBag.insertMessage != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.insertMessage
+    </div>
+}
+
+<form action="/Admin/Home" method="post" enctype="multipart/form-data">
+    <h4>Pokemon</h4>
+    <div class="form-group">
+        <label>Nom</label>
+        <input type="text" name="Nom" />
+    </div>
+    <div class="form-group">
+        <label>Numero</label>
+        <input type="number" name="Numero" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" name="Description" />
+    </div>
+    <div class="form-group">
+        <label>Obtention</label>
+        <input type="text" name="Obtention" />
+    </div>
+    <div class="form-group">
+        <label>Hp</label>
+        <input type="number" name="Hp" />
+    </div>
+    <div class="form-group">
+        <label>Atk</label>
+        <input type="number" name="Atk" />
+    </div>
+    <div class="form-group">
+        <label>Def</label>
+        <input type="number" name="Def" />
+    </div>
+    <div class="form-group">
+        <label>AtkSpe</label>
+        <input type="number" name="AtkSpe" />
+    </div>
+    <div class="form-group">
+        <label>DefSpe</label>
+        <input type="number" name="DefSpe" />
+    </div>
+    <div class="form-group">
+        <label>Vit</label>
+        <input type="number" name="Vit" />
+    </div>
+    <select name="Type1">
+        @foreach (PokeListe.Models.Models.TypeViewSimple type in PokeListe.Session.SessionUtils.listTypes)
+        {
+            <option value="@type.IdType">@type.Nom</option>
+        }
+    </select>
+    <select name="Type2">
+        <option value="0">Null</option>
+        @foreach (PokeListe.Models.Models.TypeViewSimple type in PokeListe.Session.SessionUtils.listTypes)
+        {
+            <option value="@type.IdType">@type.Nom</option>
+        }
+    </select>
+    <div class="form-group">
+        <input type="file" class="form-control" name="file" id="file"></br>
+    </div>
+    <button class="btn btn-default">Envoyer</button>
+</form>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/delFromProfil")
+}
+

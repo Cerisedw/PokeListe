@@ -4,29 +4,20 @@
 
 <h2>Liste des types</h2>
 
-<div class="row">
-    <table>
-        @*<thead>
-            <tr>
-                <th>Image</th>
-                <th>Nom</th>
-            </tr>
-        </thead>*@
-        <tbody id="listePoke">
 
-            @foreach (PokeListe.Models.Models.TypeViewSimple type in Model)
-            {
-                <tr>
-                    <td>
-                        <a href="~/Home/GetType/@type.IdType">
-                            <img src="~/Content/Img/type/@type.Img" />
-                        </a>
-                    </td>
-                    <td>@type.Nom</td>
-                </tr>
-            }
-
-        </tbody>
-    </table>
+<div id="content">
+    @foreach (PokeListe.Models.Models.TypeViewSimple type in Model)
+    {
+        <div class="vignette">
+            <a href="~/Home/GetType/@type.IdType">
+                <div>
+                    <img src="~/Content/Img/type/@type.Img" />
+                </div>
+                <div><br />
+                    <h4>@type.Nom</h4>
+                </div>
+            </a>
+        </div>
+    }
 
 </div>

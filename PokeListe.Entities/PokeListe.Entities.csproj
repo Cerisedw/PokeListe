@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infra\CompositeKey.cs" />
+    <Compile Include="Models\AjoutPokemon.cs" />
     <Compile Include="Models\Interfaces\IEntities.cs" />
     <Compile Include="Models\Pokemon.cs" />
     <Compile Include="Models\Stat.cs" />

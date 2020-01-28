@@ -34,6 +34,21 @@ namespace PokeListe.Session
             set { HttpContext.Current.Session["IsConnected"] = value; }
         }
 
+        public static bool isAdmin
+        {
+            get
+            {
+                if (IsConnected && ConnectedUser.Email == "admin@admin.com")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public static List<TypeViewSimple> listTypes
         {
             get
