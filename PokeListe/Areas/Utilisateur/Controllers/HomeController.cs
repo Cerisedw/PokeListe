@@ -90,9 +90,9 @@ namespace PokeListe.Areas.Utilisateur.Controllers
             int idUt = SessionUtils.ConnectedUser.IdUtilisateur;
             if (upr.Insert(UtilisateurPokemonTools.CompositeToUtilisateurPoke(idUt, id)) == null)
             {
-                return "KO";
+                return "K O";
             }
-            return "OK";
+            return "O K";
         }
 
         // retour en string qui retourne Ko ou Ok pour savoir si on peut changer la couleur du bouton ou pas en JS

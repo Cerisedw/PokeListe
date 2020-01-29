@@ -23,7 +23,7 @@ function fonctionClaimDB(target) {
 function changeClass(target) {
     $(target).removeClass('btn-danger').addClass('btn-primary');
     $(target).removeClass('addPoke').addClass('delPoke');
-    $(target).html('Supprimer');
+    $(target).html('Enlever');
 }
 
 function isOk(string, target) {

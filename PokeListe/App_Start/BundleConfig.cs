@@ -26,7 +26,8 @@ namespace PokeListe
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/tableau.css",
-                      "~/Content/pokemonCard.css"));
+                      "~/Content/pokemonCard.css",
+                      "~/Content/cardDetails.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/addPoke").Include(
                       //"~/Scripts/AddPokemonToUser.js",

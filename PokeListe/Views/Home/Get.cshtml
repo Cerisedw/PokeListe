@@ -1,61 +1,81 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@Model.Nom</h2>
 
 <div class="row">
-    <table>
-        <thead>
-            <tr>
-                <th>N°</th>
-                <th>Image</th>
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Obtentions</th>
-            </tr>
-        </thead>
-        <tbody id="listePoke">
-            <tr>
-                <td>@Model.Numero</td>
-                <td>
-                    <img src="~/Content/Img/pokedex/@Model.Img" />
-                </td>
-                <td>@Model.Nom</td>
-                <td>
-                    @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Types)
+    <div class="containerVignetteDetails">
+        <div class="vignetteDetails">
+            <div class="vignetteTitle flex">
+                <h2>N°@Model.Numero</h2>
+                <h2>@Model.Nom</h2>
+                <img src="~/Content/Img/pokedex/@Model.Img">
+            </div>
+            <div class="vignetteRow">
+                <h4>Description</h4>
+                <p>@Model.Description</p>
+            </div>
+            <div class="vignetteRow">
+                <h4>Obtention</h4>
+                <p>@Model.Obtention</p>
+            </div>
+            <div class="vignetteRow flex">
+                <h4>Type</h4>
+                @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Types)
+                {
+                    <a href="~/Home/GetType/@type.IdType">
+                        <img height="15" src="~/Content/Img/type/@type.Img" />
+                    </a>
+                }
+            </div>
+            <div class="vignetteRow">
+                @if (PokeListe.Session.SessionUtils.IsConnected)
+                {
+                    if (PokeListe.Session.SessionUtils.ConnectedUser.ListePoke.Contains(Model.IdPokemon))
                     {
-                        <a href="~/Home/GetType/@type.IdType">
-                            <img src="~/Content/Img/type/@type.Img" />
-                        </a>
+                        <button class="btn btn-primary delPoke actionPoke" value="@Model.IdPokemon">Enlever</button>
                     }
+                    else
+                    {
+                        <button class="btn btn-danger addPoke actionPoke" value="@Model.IdPokemon">Ajouter</button>
+                    }
+                }
+            </div>
+        </div>
 
-                </td>
-                <td>@Model.Description</td>
-                <td>@Model.Obtention</td>
-            </tr>
-        </tbody>
-    </table>
-    <table>
-        <thead>
-            <tr>
-                <th>Point de vie</th>
-                <th>Attaque</th>
-                <th>Défense</th>
-                <th>Attaque Spéciale</th>
-                <th>Défense Spéciale</th>
-                <th>Vitesse</th>
-            </tr>
-        </thead>
-        <tbody id="listePoke">
-            <tr>
-                <td>@Model.Stat.Hp</td>
-                <td>@Model.Stat.Atk</td>
-                <td>@Model.Stat.Def</td>
-                <td>@Model.Stat.AtkSpe</td>
-                <td>@Model.Stat.DefSpe</td>
-                <td>@Model.Stat.Vit</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="vignetteDetails stats">
+            <div class="vignetteTitle flex">
+                <h2>Stats</h2>
+            </div>
+            <div class="vignetteRowStat flex">
+                <h4>Point de vie</h4>
+                <p>@Model.Stat.Hp</p>
+            </div>
+            <div class="vignetteRowStat flex">
+                <h4>Atk</h4>
+                <p>@Model.Stat.Atk</p>
+            </div>
+            <div class="vignetteRowStat flex">
+                <h4>Défense</h4>
+                <p>@Model.Stat.Def</p>
+            </div>
+            <div class="vignetteRowStat flex">
+                <h4>Atk Spé</h4>
+                <p>@Model.Stat.AtkSpe</p>
+            </div>
+            <div class="vignetteRowStat flex">
+                <h4>Déf Spé</h4>
+                <p>@Model.Stat.DefSpe</p>
+            </div>
+            <div class="vignetteRowStat flex">
+                <h4>Vitesse</h4>
+                <p>@Model.Stat.Vit</p>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/addPoke")
+}

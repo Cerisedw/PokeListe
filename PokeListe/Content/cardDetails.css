@@ -1,0 +1,48 @@
+﻿
+.vignetteDetails {
+    background-color: #f9f6f7;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(100, 100, 100, 0.5);
+    text-align: left;
+}
+.vignetteDetails h4{
+    width: 150px;
+    margin-bottom: 15px;
+    line-height: 0;
+}
+
+.vignetteTitle {
+    justify-content: space-evenly;
+    border-radius: 5px;
+    background-color: #3eb3ab;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.vignetteRow {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.stats {
+    width: 250px;
+    margin-left: 50px;
+}
+
+.vignetteRowStat {
+    text-align: left;
+    padding: 5px 15%;
+}
+
+.flex {
+    display: flex;
+}
+.flex img {
+    padding-left: 1em;
+}
+
+.containerVignetteDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
