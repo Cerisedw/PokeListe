@@ -4,49 +4,69 @@
 }
     <div class="row">
         <div class="col-sm-6">
-            <h2>@PokeListe.Session.SessionUtils.ConnectedUser.Pseudo</h2>
-
-
-            <img style="width:350px;" src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
-            <p>@PokeListe.Session.SessionUtils.ConnectedUser.Email</p>
-            
-            <a href="/Utilisateur/Home/Update">Modifier mon profil</a>
-        </div>
-
-        <div class="col-sm-6">
-            <h3>Mes Pokémons</h3>
-            <div id="content">
-                @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
-                {
-                    <div class="vignette">
-                        <a href="~/Home/Get/@pokemon.IdPokemon">
-                            <div>
-                                <img src="~/Content/Img/pokedex/@pokemon.Img" />
-                            </div>
-                            <div>
-                                <span>@pokemon.Numero</span>
-                                <h4>@pokemon.Nom</h4>
-                            </div>
-                        </a>
-                        @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
-                        {
-                            <a href="~/Home/GetType/@type.IdType">
-                                <img src="~/Content/Img/type/@type.Img" />
-                            </a>
-                        }
-                        <button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Enlever</button>
-
+            <div class="containerVignetteDetails">
+                <div class="vignetteDetails">
+                    <div class="vignetteTitle flex">
+                        <h2>@PokeListe.Session.SessionUtils.ConnectedUser.Pseudo</h2>
                     </div>
-                }
+                    <div class="vignetteRow">
+                        <img style="width:350px;" src="~/Content/Img/Utilisateurs/@PokeListe.Session.SessionUtils.ConnectedUser.Img" />
+                    </div>
+                    <div class="vignetteRow flex">
+                        <h4>Email</h4>
+                        <p>@PokeListe.Session.SessionUtils.ConnectedUser.Email</p>
+                    </div>
+                    <div class="vignetteRow">
+                        <a href="/Utilisateur/Home/Update">Modifier mon profil</a>
+                    </div>
+                </div>
+                </div>
+
 
             </div>
 
-        </div>
+        <div class="col-sm-6">
+            <div class="containerVignetteDetails">
+                <div class="vignetteDetails listePoke">
+                    <div class="vignetteTitle flex">
+                        <h3>Mes Pokémons</h3>
+                    </div>
+                    <div class="vignetteRow">
+                        <div id="content">
+                            @foreach (PokeListe.Models.Models.PokemonView pokemon in Model)
+                            {
+                                <div class="vignette">
+                                    <a href="~/Home/Get/@pokemon.IdPokemon">
+                                        <div>
+                                            <img src="~/Content/Img/pokedex/@pokemon.Img" />
+                                        </div>
+                                        <div>
+                                            <p>@pokemon.Numero</p>
+                                            <h4>@pokemon.Nom</h4>
+                                        </div>
+                                    </a>
+                                    @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
+                                    {
+                                        <a href="~/Home/GetType/@type.IdType">
+                                            <img src="~/Content/Img/type/@type.Img" />
+                                        </a>
+                                    }
+                                    <button class="btn btn-primary delPoke actionPoke" value="@pokemon.IdPokemon">Enlever</button>
 
-    </div>
+                                </div>
+                            }
 
-@section scripts
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+
+                </div>
+
+                @section scripts
 {
-    @Scripts.Render("~/bundles/delFromProfil")
-}
+                    @Scripts.Render("~/bundles/delFromProfil")
+                }
 

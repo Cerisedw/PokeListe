@@ -17,7 +17,13 @@
     background-color: #3eb3ab;
     color: white;
     margin-bottom: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
+
+    .vignetteTitle h2 {
+        margin-bottom: 20px;
+    }
 
 .vignetteRow {
     padding: 15px 20px;
@@ -27,6 +33,16 @@
 .stats {
     width: 250px;
     margin-left: 50px;
+}
+
+.filter {
+    width: 250px;
+    margin-left: 50px;
+    max-height: 670px;
+}
+
+.listePoke {
+    min-width: 300px;
 }
 
 .vignetteRowStat {
@@ -46,3 +62,4 @@
     justify-content: space-between;
     margin-top: 50px;
 }
+
