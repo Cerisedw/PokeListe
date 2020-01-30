@@ -26,6 +26,7 @@ namespace PokeListe.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Index(AddPokemon ap, HttpPostedFileBase file)
         {
             if (file != null)

@@ -5,6 +5,7 @@
 
 <h2>Modifier mon profil :</h2></br>
 <form method="post" action="/Utilisateur/Home/Update" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
     <label>Pseudo</label>
     <input type="text" name="Pseudo" value="@PokeListe.Session.SessionUtils.ConnectedUser.Pseudo" /></br>
     <label>Email</label>

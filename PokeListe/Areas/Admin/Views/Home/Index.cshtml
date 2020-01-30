@@ -10,6 +10,7 @@
 }
 
 <form action="/Admin/Home" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
     <h4>Pokemon</h4>
     <div class="form-group">
         <label>Nom</label>

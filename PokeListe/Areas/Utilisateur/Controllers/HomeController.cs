@@ -44,6 +44,7 @@ namespace PokeListe.Areas.Utilisateur.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update(UtilisateurView u, HttpPostedFileBase file)
         {
             UtilisateurRepository ur = new UtilisateurRepository(cnString);
