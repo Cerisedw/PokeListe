@@ -41,8 +41,8 @@
         <div class="vignetteTitle flex">
             <h2>Filter</h2>
         </div>
-        <div class="vignetteRowStat flex">
-            <a href="~/Home/">Tous</a>
+        <div class="vignetteRowStat flex filterType" id="0">
+            <button class="btn btn-primary">Tous afficher</button>
         </div>
         @foreach (PokeListe.Models.Models.TypeViewSimple type in PokeListe.Session.SessionUtils.listTypes)
         {

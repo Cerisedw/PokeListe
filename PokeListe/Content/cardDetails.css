@@ -40,7 +40,7 @@
 .filter {
     width: 250px;
     margin-left: 50px;
-    max-height: 670px;
+    height: 600px;
 }
 
 .listePoke {

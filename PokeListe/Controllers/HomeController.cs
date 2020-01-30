@@ -144,7 +144,7 @@ namespace PokeListe.Controllers
         public JsonResult FilterByType(int id)
         {
             PokemonRepository pr = new PokemonRepository(cnString);
-            List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.getAllFromType(id));
+            List<PokemonView> listePoke = (id != 0) ? PokemonTools.ListPokeToListPokeView(pr.getAllFromType(id)) : PokemonTools.ListPokeToListPokeView(pr.GetAll());
             return Json(listePoke, JsonRequestBehavior.AllowGet);
         }
 
