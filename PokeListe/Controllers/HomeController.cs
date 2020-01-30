@@ -141,11 +141,11 @@ namespace PokeListe.Controllers
             return RedirectToAction("Index", new { controller = "Home", area = "" });
         }
 
-        public ActionResult FilterByType(int id)
+        public JsonResult FilterByType(int id)
         {
             PokemonRepository pr = new PokemonRepository(cnString);
             List<PokemonView> listePoke = PokemonTools.ListPokeToListPokeView(pr.getAllFromType(id));
-            return View("Index", listePoke);
+            return Json(listePoke, JsonRequestBehavior.AllowGet);
         }
 
 

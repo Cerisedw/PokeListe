@@ -46,10 +46,10 @@
         </div>
         @foreach (PokeListe.Models.Models.TypeViewSimple type in PokeListe.Session.SessionUtils.listTypes)
         {
-            <div class="vignetteRowStat flex">
-                <a href="~/Home/FilterByType/@type.IdType">
-                    <img src="~/Content/Img/type/@type.Img" />
-                </a>
+            <div style="cursor: pointer;" class="vignetteRowStat flex filterType" id="@type.IdType">
+                @*<a href="~/Home/FilterByType/@type.IdType">*@
+                <img src="~/Content/Img/type/@type.Img" />
+                @*</a>*@
 
             </div>
 
@@ -57,3 +57,8 @@
 
     </div>
 </div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/filterType")
+}
+

@@ -56,8 +56,8 @@
         </div>
         @foreach (PokeListe.Models.Models.TypeViewSimple type in PokeListe.Session.SessionUtils.listTypes)
         {
-            <div class="vignetteRowStat flex">
-                <a href="~/Home/FilterByType/@type.IdType">
+            <div class="vignetteRowStat flex" id="@type.IdType">
+                <a href="~/Utilisateur/Home/FilterByType/@type.IdType">
                     <img src="~/Content/Img/type/@type.Img" />
                 </a>
 
@@ -67,8 +67,8 @@
 
     </div>
 </div>
-            @section scripts
+@section scripts
 {
-                @Scripts.Render("~/bundles/addPoke")
-            }
+    @Scripts.Render("~/bundles/addPoke")
+}
 

@@ -31,10 +31,12 @@ namespace PokeListe
 
             bundles.Add(new ScriptBundle("~/bundles/addPoke").Include(
                       //"~/Scripts/AddPokemonToUser.js",
-                      //"~/Scripts/delPoke.js",
+                      "~/Scripts/filterType.js",
                       "~/Scripts/buttonEventPokeUser.js"));
             bundles.Add(new ScriptBundle("~/bundles/delFromProfil").Include(
                 "~/Scripts/delFromProfil.js"));
+            bundles.Add(new ScriptBundle("~/bundles/filterType").Include(
+                      "~/Scripts/filterType.js"));
         }
     }
 }
