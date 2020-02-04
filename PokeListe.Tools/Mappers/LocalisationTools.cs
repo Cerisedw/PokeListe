@@ -56,7 +56,6 @@ namespace PokeListe.Tools.Mappers
             List<PokemonView> listePokeV = PokemonTools.listFromLoc(locV.IdLocalisation);
             List<LocalisationPokemonView> listeLPV = LocalisationPokemonTools.ListLPViewWithIdLoc(locV.IdLocalisation);
             List<InfoPokemonLoc> listeIPL = new List<InfoPokemonLoc>();
-
             for (int i = 0; i < listePokeV.Count; i++)
             {
                 InfoPokemonLoc ipl = new InfoPokemonLoc()

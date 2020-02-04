@@ -38,7 +38,8 @@ namespace PokeListe.DAL.Repositories
 
         public IEnumerable<LocalisationPokemon> GetAllFromLoc(int idLoc)
         {
-            CustomCommand = "SELECT * FROM LocalisationPokemon WHERE LocalisationPokemon.IdLocalisation = @Id ORDER BY LocalisationPokemon.Lieu ASC;";
+            //  ORDER BY LocalisationPokemon.Lieu ASC  ne fonctionne pas encore car dans mon mapper j'utilise deux listes dont l'une ne sera pas triée.
+            CustomCommand = "SELECT * FROM LocalisationPokemon WHERE LocalisationPokemon.IdLocalisation = @Id;";
             return base.getAllFromCustomCommand(idLoc, createItem);
         }
 
