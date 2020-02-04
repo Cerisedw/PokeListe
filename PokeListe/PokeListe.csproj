@@ -222,6 +222,8 @@
     <Content Include="Views\Home\AllTypes.cshtml" />
     <Content Include="Views\Home\GetType.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\AllLoc.cshtml" />
+    <Content Include="Views\Home\GetLoc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

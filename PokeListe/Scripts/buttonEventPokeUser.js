@@ -3,7 +3,6 @@
     (e.target.classList.value.search("addPoke") !== -1) ? fonctionClaimDB(e.target) : fonctionDeleteDB(e.target);
 });
 
-
 function fonctionClaimDB(target) {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () => {

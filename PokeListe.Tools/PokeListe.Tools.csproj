@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbConnect.cs" />
+    <Compile Include="Mappers\LocalisationPokemonTools.cs" />
+    <Compile Include="Mappers\LocalisationTools.cs" />
     <Compile Include="Mappers\PokemonTools.cs" />
     <Compile Include="Mappers\StatTools.cs" />
     <Compile Include="Mappers\TypeTools.cs" />

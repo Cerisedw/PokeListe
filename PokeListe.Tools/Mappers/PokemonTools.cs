@@ -80,6 +80,12 @@ namespace PokeListe.Tools.Mappers
             };
         }
 
+        public static List<PokemonView> listFromLoc(int idLoc)
+        {
+            PokemonRepository pr = new PokemonRepository(dbConnect.DbString);
+            return ListPokeToListPokeView(pr.getAllFromLoc(idLoc));
+        } 
+
     }
 
 }

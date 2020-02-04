@@ -24,7 +24,7 @@
     .vignetteTitle h2 {
         margin-bottom: 20px;
     }
-    .vignetteTitle img{
+    .vignetteTitle img {
         margin-top: 8px;
     }
 .vignetteRow {
@@ -73,4 +73,5 @@
     justify-content: space-between;
     margin-top: 50px;
 }
+
 

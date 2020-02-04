@@ -50,6 +50,20 @@ namespace PokeListe.Controllers
             return View(type);
         }
 
+        public ActionResult AllLoc()
+        {
+            LocalisationRepository lr = new LocalisationRepository(cnString);
+            List<LocalisationViewSimple> listeLocView = LocalisationTools.ListlocToListlocviewSimple(lr.GetAll());
+            return View(listeLocView);
+        }
+
+        public ActionResult GetLoc(int id)
+        {
+            LocalisationRepository lr = new LocalisationRepository(cnString);
+            LocalisationView loc = LocalisationTools.AddListToLocView(LocalisationTools.LocalisationToLocalisationView(lr.Get(id)));
+            return View(loc);
+        }
+
         public ActionResult Login()
         {
             return View();
@@ -147,8 +161,5 @@ namespace PokeListe.Controllers
             List<PokemonView> listePoke = (id != 0) ? PokemonTools.ListPokeToListPokeView(pr.getAllFromType(id)) : PokemonTools.ListPokeToListPokeView(pr.GetAll());
             return Json(listePoke, JsonRequestBehavior.AllowGet);
         }
-
-
-
     }
 }

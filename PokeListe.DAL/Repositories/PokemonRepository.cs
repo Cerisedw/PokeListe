@@ -52,6 +52,11 @@ namespace PokeListe.DAL.Repositories
             CustomCommand = "SELECT Pokemon.* FROM Pokemon INNER JOIN PokemonType ON Pokemon.IdPokemon = PokemonType.IdPokemon WHERE PokemonType.IdType = @Id;";
             return base.getAllFromCustomCommand(idType, createItem);
         }
+        public IEnumerable<Pokemon> getAllFromLoc(int idLoc)
+        {
+            CustomCommand = "SELECT Pokemon.* FROM Pokemon INNER JOIN LocalisationPokemon ON Pokemon.IdPokemon = LocalisationPokemon.IdPokemon WHERE LocalisationPokemon.IdLocalisation = @Id;";
+            return base.getAllFromCustomCommand(idLoc, createItem);
+        }
 
         public int insertPokemon(AjoutPokemon ap)
         {

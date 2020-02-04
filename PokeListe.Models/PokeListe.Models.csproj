@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AddPokemon.cs" />
+    <Compile Include="Models\InfoPokemonLoc.cs" />
+    <Compile Include="Models\LocalisationPokemonView.cs" />
+    <Compile Include="Models\LocalisationView.cs" />
+    <Compile Include="Models\LocalisationViewSimple.cs" />
     <Compile Include="Models\LoginUtilisateur.cs" />
     <Compile Include="Models\PokemonView.cs" />
     <Compile Include="Models\PokemonViewBool.cs" />

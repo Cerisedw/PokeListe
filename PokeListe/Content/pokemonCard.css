@@ -9,6 +9,9 @@
 
 
 }
+    .vignette img {
+        max-width: 100px;
+    }
 .vignette h4 {
     line-height: 0;
 }

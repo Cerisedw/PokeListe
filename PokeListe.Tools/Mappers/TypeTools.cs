@@ -58,6 +58,11 @@ namespace PokeListe.Tools.Mappers
             TypePokeRepository tr = new TypePokeRepository(dbConnect.DbString);
             return ListTypeToListTypeSimple(tr.GetAllFromIdPokemon(pokemon.IdPokemon));
         }
+        public static List<TypeViewSimple> TypeViewSimpleFromId(int idPoke)
+        {
+            TypePokeRepository tr = new TypePokeRepository(dbConnect.DbString);
+            return ListTypeToListTypeSimple(tr.GetAllFromIdPokemon(idPoke));
+        }
 
         public static TypeView AddListsToType(TypeView typeV)
         {

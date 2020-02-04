@@ -44,6 +44,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Repositories\LocalisationPokemonRepository.cs" />
+    <Compile Include="Repositories\LocalisationRepository.cs" />
     <Compile Include="Repositories\PokemonRepository.cs" />
     <Compile Include="Repositories\StatRepository.cs" />
     <Compile Include="Repositories\TypePokeRepository.cs" />
