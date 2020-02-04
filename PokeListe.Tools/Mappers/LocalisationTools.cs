@@ -1,4 +1,5 @@
-﻿using PokeListe.Entities.Models;
+﻿using PokeListe.DAL.Repositories;
+using PokeListe.Entities.Models;
 using PokeListe.Models.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace PokeListe.Tools.Mappers
     public static class LocalisationTools
     {
 
-        public static LocalisationView LocalisationToLocalisationView ( Localisation loc)
+        public static LocalisationView LocalisationToLocalisationView(Localisation loc)
         {
             return new LocalisationView()
             {
@@ -21,7 +22,7 @@ namespace PokeListe.Tools.Mappers
                 Img = loc.Img,
             };
         }
-        public static LocalisationViewSimple LocalisationToLocalisationViewSimple ( Localisation loc)
+        public static LocalisationViewSimple LocalisationToLocalisationViewSimple(Localisation loc)
         {
             return new LocalisationViewSimple()
             {
@@ -72,6 +73,13 @@ namespace PokeListe.Tools.Mappers
             }
             locV.listeInfoPokeLoc = listeIPL;
             return locV;
+        }
+
+        public static List<LocalisationViewSimple> ListeLVSFromIdPoke(int idPoke)
+        {
+            LocalisationRepository lr = new LocalisationRepository(dbConnect.DbString);
+            List<LocalisationViewSimple> listelvs = ListlocToListlocviewSimple(lr.GetAllFromIdPoke(idPoke));
+            return (listelvs == null) ? new List<LocalisationViewSimple>() : listelvs;
         }
 
     }

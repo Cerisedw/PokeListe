@@ -24,7 +24,8 @@ namespace PokeListe.Tools.Mappers
                 Obtention = poke.Obtention,
                 IdStat = poke.IdStat,
                 Stat = StatTools.AddStatToPokemonView(poke),
-                Types = TypeTools.TypeViewSimpleFromPokemon(poke)
+                Types = TypeTools.TypeViewSimpleFromPokemon(poke),
+                Localisations = LocalisationTools.ListeLVSFromIdPoke(poke.IdPokemon)
             };
         }
 

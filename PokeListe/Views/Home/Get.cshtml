@@ -17,6 +17,12 @@
             <div class="vignetteRow">
                 <h4>Obtention</h4>
                 <p>@Model.Obtention</p>
+                @foreach(PokeListe.Models.Models.LocalisationViewSimple loc in Model.Localisations)
+                {
+                    <a href="~/Home/GetLoc/@loc.IdLocalisation">
+                        @loc.Nom
+                    </a>
+                }
             </div>
             <div class="vignetteRow flex">
                 <h4>Type</h4>

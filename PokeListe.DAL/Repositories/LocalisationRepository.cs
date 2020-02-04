@@ -36,6 +36,12 @@ namespace PokeListe.DAL.Repositories
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Localisation> GetAllFromIdPoke(int idPoke)
+        {
+            CustomCommand = "SELECT * FROM Localisation INNER JOIN LocalisationPokemon ON Localisation.IdLocalisation = LocalisationPokemon.IdLocalisation WHERE LocalisationPokemon.IdPokemon = @Id;";
+            return base.getAllFromCustomCommand(idPoke, createItem);
+        }
+
         protected override Dictionary<string, object> itemToDictio(Localisation item)
         {
             Dictionary<string, object> dictio = new Dictionary<string, object>();
