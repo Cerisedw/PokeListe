@@ -87,6 +87,14 @@ namespace PokeListe.Tools.Mappers
             return ListPokeToListPokeView(pr.getAllFromLoc(idLoc));
         } 
 
+
+        public static PokemonView PokeViewFromIdPokemon(int idPoke)
+        {
+            PokemonRepository pr = new PokemonRepository(dbConnect.DbString);
+            PokemonView pv = PokeToPokeView(pr.Get(idPoke));
+            return pv;
+        }
+
     }
 
 }

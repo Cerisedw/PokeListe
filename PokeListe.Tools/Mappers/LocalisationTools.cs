@@ -53,20 +53,20 @@ namespace PokeListe.Tools.Mappers
 
         public static LocalisationView AddListToLocView(LocalisationView locV)
         {
-            List<PokemonView> listePokeV = PokemonTools.listFromLoc(locV.IdLocalisation);
             List<LocalisationPokemonView> listeLPV = LocalisationPokemonTools.ListLPViewWithIdLoc(locV.IdLocalisation);
             List<InfoPokemonLoc> listeIPL = new List<InfoPokemonLoc>();
-            for (int i = 0; i < listePokeV.Count; i++)
+
+            foreach (LocalisationPokemonView lpv in listeLPV)
             {
+                PokemonView pv = PokemonTools.PokeViewFromIdPokemon(lpv.IdPokemon);
                 InfoPokemonLoc ipl = new InfoPokemonLoc()
                 {
-                    IdPokemon = listePokeV[i].IdPokemon,
-                    Nom = listePokeV[i].Nom,
-                    Img = listePokeV[i].Img,
-                    TauxApp = listeLPV[i].TauxApp,
-                    Lieu = listeLPV[i].Lieu,
-                    Types = TypeTools.TypeViewSimpleFromId(listePokeV[i].IdPokemon),
-
+                    IdPokemon = pv.IdPokemon,
+                    Nom = pv.Nom,
+                    Img = pv.Img,
+                    TauxApp = lpv.TauxApp,
+                    Lieu = lpv.Lieu,
+                    Types = pv.Types,
                 };
                 listeIPL.Add(ipl);
             }
