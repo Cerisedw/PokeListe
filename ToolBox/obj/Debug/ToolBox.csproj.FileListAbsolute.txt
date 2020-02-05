@@ -43,3 +43,8 @@ C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox.csproj.CoreCompileInputs.cache
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox.dll
 C:\Users\c.wannemaeker\Documents\Mes projets\PokeListe\ToolBox\obj\Debug\ToolBox.pdb
+C:\Users\myrti\Documents\Code\projets asp\PokeListe\ToolBox\bin\Debug\ToolBox.dll
+C:\Users\myrti\Documents\Code\projets asp\PokeListe\ToolBox\bin\Debug\ToolBox.pdb
+C:\Users\myrti\Documents\Code\projets asp\PokeListe\ToolBox\obj\Debug\ToolBox.csprojAssemblyReference.cache
+C:\Users\myrti\Documents\Code\projets asp\PokeListe\ToolBox\obj\Debug\ToolBox.dll
+C:\Users\myrti\Documents\Code\projets asp\PokeListe\ToolBox\obj\Debug\ToolBox.pdb

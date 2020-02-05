@@ -46,7 +46,10 @@ namespace PokeListe.Tools.Mappers
             List<LocalisationViewSimple> listeLocView = new List<LocalisationViewSimple>();
             foreach (Localisation loc in listeLoc)
             {
-                listeLocView.Add(LocalisationToLocalisationViewSimple(loc));
+                if(listeLocView.Find(x => x.IdLocalisation == loc.IdLocalisation) == null)
+                {
+                    listeLocView.Add(LocalisationToLocalisationViewSimple(loc));
+                }
             }
             return listeLocView;
         }
@@ -80,6 +83,5 @@ namespace PokeListe.Tools.Mappers
             List<LocalisationViewSimple> listelvs = ListlocToListlocviewSimple(lr.GetAllFromIdPoke(idPoke));
             return (listelvs == null) ? new List<LocalisationViewSimple>() : listelvs;
         }
-
     }
 }
