@@ -45,7 +45,9 @@ namespace PokeListe.Controllers
         public ActionResult GetType(int id)
         {
             TypePokeRepository tr = new TypePokeRepository(cnString);
+            PokemonRepository pr = new PokemonRepository(cnString);
             TypeView type = TypeTools.TypeToTypeView(tr.Get(id));
+            type.ListePoke = PokemonTools.ListPokeToListPokeView(pr.getAllFromType(id));
             TypeTools.AddListsToType(type);
             return View(type);
         }

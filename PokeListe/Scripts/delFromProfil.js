@@ -7,6 +7,8 @@
 
 function deleteRow(target) {
     $(target).parent().remove();
+    const count = parseInt($("#pokeCount").text(), 10) - 1;
+    $("#pokeCount").text(count);
 }
 
 function fonctionDeleteDB(target) {

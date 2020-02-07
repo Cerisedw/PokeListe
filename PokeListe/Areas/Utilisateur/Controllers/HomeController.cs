@@ -104,6 +104,7 @@ namespace PokeListe.Areas.Utilisateur.Controllers
             int idUt = SessionUtils.ConnectedUser.IdUtilisateur;
             if(!upr.DelFromUser(new CompositeKey<int, int>() { PK1 = idUt, PK2 = id }))
             {
+                //ViewBag.countPoke = upr.GetAllFromUser(SessionUtils.ConnectedUser.IdUtilisateur).ToList().Count;
                 return "KO";
             }
             return "OK";

@@ -54,5 +54,6 @@ namespace PokeListe.Models.Models
         public List<TypeViewSimple> Faiblesse { get; set; }
         public List<TypeViewSimple> Resistance { get; set; }
         public List<TypeViewSimple> Immunite { get; set; }
+        public List<PokemonView> ListePoke { get; set; }
     }
 }

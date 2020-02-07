@@ -4,54 +4,86 @@
 }
 
 
-    <div class="containerVignetteDetails">
-        <div class="vignetteDetails">
-            <div class="vignetteTitle flex">
-                        <h2>@Model.Nom</h2>
-                        <img height="15" style="margin-top: 2.2em;" src="~/Content/Img/type/@Model.Img" />
-            </div>
-            <div class="vignetteRow">
+<div class="containerVignetteDetails">
+    <div class="vignetteDetails">
+        <div class="vignetteTitle flex">
+            <h2>@Model.Nom</h2>
+            <img height="15" style="margin-top: 2.2em;" src="~/Content/Img/type/@Model.Img" />
+        </div>
+        <div class="vignetteRow">
             <div id="content">
-                    <div class="col-xs-4">
-                        <div class="vignette">
-                            <h4>Faiblesse</h4>
-                            @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Faiblesse)
-                            {
-                                <a href="~/Home/GetType/@type.IdType">
-                                    <img src="~/Content/Img/type/@type.Img" />
-                                </a>
-                            }
-                        </div>
+                <div class="col-xs-4">
+                    <div class="vignette">
+                        <h4>Faiblesse</h4>
+                        @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Faiblesse)
+                        {
+                            <a href="~/Home/GetType/@type.IdType">
+                                <img src="~/Content/Img/type/@type.Img" />
+                            </a>
+                        }
                     </div>
+                </div>
 
-                    <div class="col-xs-4">
-                        <div class="vignette">
+                <div class="col-xs-4">
+                    <div class="vignette">
 
-                            <h4>Résistance</h4>
-                            @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Resistance)
-                            {
+                        <h4>Résistance</h4>
+                        @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Resistance)
+                        {
 
-                                <a href="~/Home/GetType/@type.IdType">
-                                    <img src="~/Content/Img/type/@type.Img" />
-                                </a>
-                            }
-                        </div>
-                        </div>
-
-                    <div class="col-xs-4">
-                        <div class="vignette">
-
-                            <h4>Immunité</h4>
-                            @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Immunite)
-                            {
-                                <a href="~/Home/GetType/@type.IdType">
-                                    <img src="~/Content/Img/type/@type.Img" />
-                                </a>
-                            }
-                        </div>
-                        </div>
+                            <a href="~/Home/GetType/@type.IdType">
+                                <img src="~/Content/Img/type/@type.Img" />
+                            </a>
+                        }
                     </div>
+                </div>
+
+                <div class="col-xs-4">
+                    <div class="vignette">
+
+                        <h4>Immunité</h4>
+                        @foreach (PokeListe.Models.Models.TypeViewSimple type in Model.Immunite)
+                        {
+                            <a href="~/Home/GetType/@type.IdType">
+                                <img src="~/Content/Img/type/@type.Img" />
+                            </a>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+<div class="containerVignetteDetails">
+    <div class="vignetteDetails listePoke">
+        <div class="vignetteTitle flex">
+            <h3>Pokémons @Model.Nom</h3>
+        </div>
+        <div class="vignetteRow">
+            <div id="content">
+                @foreach (PokeListe.Models.Models.PokemonView pokemon in Model.ListePoke)
+                {
+                    <div class="vignette">
+                        <a href="~/Home/Get/@pokemon.IdPokemon">
+                            <div>
+                                <img src="~/Content/Img/pokedex/@pokemon.Img" />
+                            </div>
+                            <div>
+                                <p>@pokemon.Numero</p>
+                                <h4>@pokemon.Nom</h4>
+                            </div>
+                        </a>
+                        @foreach (PokeListe.Models.Models.TypeViewSimple type in pokemon.Types)
+                        {
+                            <a href="~/Home/GetType/@type.IdType">
+                                <img src="~/Content/Img/type/@type.Img" />
+                            </a>
+                        }
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
 

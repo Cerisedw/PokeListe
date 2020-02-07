@@ -11,7 +11,6 @@ namespace PokeListe.Tools.Mappers
 {
     public static class LocalisationTools
     {
-
         public static LocalisationView LocalisationToLocalisationView(Localisation loc)
         {
             return new LocalisationView()
@@ -81,7 +80,7 @@ namespace PokeListe.Tools.Mappers
         {
             LocalisationRepository lr = new LocalisationRepository(dbConnect.DbString);
             List<LocalisationViewSimple> listelvs = ListlocToListlocviewSimple(lr.GetAllFromIdPoke(idPoke));
-            return (listelvs == null) ? new List<LocalisationViewSimple>() : listelvs;
+            return listelvs ?? new List<LocalisationViewSimple>();
         }
     }
 }

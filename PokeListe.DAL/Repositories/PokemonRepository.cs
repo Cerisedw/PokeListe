@@ -30,7 +30,8 @@ namespace PokeListe.DAL.Repositories
 
         public override IEnumerable<Pokemon> GetAll()
         {
-            return base.getAll(createItem);
+            IEnumerable<Pokemon> listPoke = base.getAll(createItem);
+            return listPoke.ToList().OrderBy(x=>x.Numero);
         }
 
         public override Pokemon Insert(Pokemon item)
@@ -42,20 +43,21 @@ namespace PokeListe.DAL.Repositories
 
         }
 
+
         public IEnumerable<Pokemon> getAllFromUser(int idUser)
         {
             CustomCommand = "SELECT Pokemon.* FROM Pokemon INNER JOIN UtilisateurPokemon ON Pokemon.IdPokemon = UtilisateurPokemon.IdPokemon WHERE UtilisateurPokemon.IdUtilisateur = @Id;";
-            return base.getAllFromCustomCommand(idUser, createItem);
+            return base.getAllFromCustomCommand(idUser, createItem).ToList().OrderBy(x => x.Numero);
         }
         public IEnumerable<Pokemon> getAllFromType(int idType)
         {
             CustomCommand = "SELECT Pokemon.* FROM Pokemon INNER JOIN PokemonType ON Pokemon.IdPokemon = PokemonType.IdPokemon WHERE PokemonType.IdType = @Id;";
-            return base.getAllFromCustomCommand(idType, createItem);
+            return base.getAllFromCustomCommand(idType, createItem).ToList().OrderBy(x => x.Numero);
         }
         public IEnumerable<Pokemon> getAllFromLoc(int idLoc)
         {
             CustomCommand = "SELECT Pokemon.* FROM Pokemon INNER JOIN LocalisationPokemon ON Pokemon.IdPokemon = LocalisationPokemon.IdPokemon WHERE LocalisationPokemon.IdLocalisation = @Id;";
-            return base.getAllFromCustomCommand(idLoc, createItem);
+            return base.getAllFromCustomCommand(idLoc, createItem).ToList().OrderBy(x => x.Numero);
         }
 
         public int insertPokemon(AjoutPokemon ap)
