@@ -18,11 +18,7 @@ $('.filterType').on('click', (target) => {
 
 function createVignettePoke(arrayPoke) {
     $('#content').empty();
-    console.log(arrayPoke);
-    for (let i = 0; i < arrayPoke.length; i++) {
-        console.log(arrayPoke[i]);
-        vignette(arrayPoke[i]);
-    }
+    arrayPoke.forEach(vignette);
 }
 
 function vignette(poke) {
@@ -34,11 +30,11 @@ function vignette(poke) {
         </a>
     </div>
     `);
-    for (let j = 0; j < poke.Types.length; j++) {
-    
+    poke.Types.forEach((item) => {
         div.append(`
-            <a href="/Home/GetType/${poke.Types[j].IdType}"><img src="/Content/Img/type/${poke.Types[j].Img}" /></a>
+            <a href="/Home/GetType/${item.IdType}"><img src="/Content/Img/type/${item.Img}" /></a>
         `);
-    }
+    });
+
     $("#content").append(div);
 }
