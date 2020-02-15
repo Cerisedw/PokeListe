@@ -2,59 +2,64 @@
 @{
     ViewBag.Title = "GetLoc";
 }
+@section Header
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
 
-
-        <div class="containerVignetteDetails">
-            <div class="vignetteDetails">
-                <div class="vignetteTitle flex">
-                    <h2>@Model.Nom</h2>
-                </div>
-                <div class="vignetteRow">
-                    <h4>Description</h4>
-                    <p>@Model.Description</p>
-                    <img style="max-width: 560px;" src="~/Content/Img/localisation/@Model.Img" />
-                </div>
-            </div>
+<div class="containerVignetteDetails">
+    <div class="vignetteDetails">
+        <div class="vignetteTitle flex">
+            <h2>@Model.Nom</h2>
         </div>
+        <div class="vignetteRow">
+            <h4>Description</h4>
+            <p>@Model.Description</p>
+            <img style="max-width: 560px;" src="~/Content/Img/localisation/@Model.Img" />
+        </div>
+    </div>
+</div>
 
-        <div class="containerVignetteDetails">
+<div class="containerVignetteDetails">
 
-            <div class="vignetteDetails">
-                <div class="vignetteTitle flex">
-                    <h2>Pokémons présents</h2>
-                </div>
-                <div class="vignetteRow">
-                    <div id="content">
-                        @foreach (PokeListe.Models.Models.InfoPokemonLoc poke in Model.listeInfoPokeLoc)
-                        {
-                            <div class="vignette">
-                                <div>
-                                    <h4>@poke.Lieu</h4>
-                                </div>
-                                <a href="~/Home/Get/@poke.IdPokemon">
-                                    <div>
-                                        <img src="~/Content/Img/pokedex/@poke.Img" />
-                                    </div>
-                                    <div>
-                                        <br />
-                                        <h4>@poke.Nom</h4>
-                                    </div>
-                                    @foreach (PokeListe.Models.Models.TypeViewSimple type in poke.Types)
-                                    {
-                                        <a href="~/Home/GetType/@type.IdType">
-                                            <img src="~/Content/Img/type/@type.Img" />
-                                        </a>
-                                    }
-
-                                    <div>
-                                        <h5>@poke.TauxApp %</h5>
-                                    </div>
-                                </a>
+    <div class="vignetteDetails">
+        <div class="vignetteTitle flex">
+            <h2>Pokémons présents</h2>
+        </div>
+        <div class="vignetteRow">
+            <div id="content">
+                @foreach (PokeListe.Models.Models.InfoPokemonLoc poke in Model.listeInfoPokeLoc)
+                {
+                    <div class="vignette">
+                        <div>
+                            <h4>@poke.Lieu</h4>
+                        </div>
+                        <a href="~/Home/Get/@poke.IdPokemon">
+                            <div>
+                                <img src="~/Content/Img/pokedex/@poke.Img" />
                             </div>
-                        }
+                            <div>
+                                <br />
+                                <h4>@poke.Nom</h4>
+                            </div>
+                            @foreach (PokeListe.Models.Models.TypeViewSimple type in poke.Types)
+                            {
+                                <a href="~/Home/GetType/@type.IdType">
+                                    <img src="~/Content/Img/type/@type.Img" />
+                                </a>
+                            }
 
+                            <div>
+                                <h5>@poke.TauxApp %</h5>
+                            </div>
+                        </a>
                     </div>
-                </div>
+                }
+
             </div>
         </div>
+    </div>
+</div>
 

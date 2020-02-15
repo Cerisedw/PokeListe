@@ -2,7 +2,12 @@
 @{
     ViewBag.Title = "Login";
 }
-
+@section Header
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
 @if (ViewBag.SuccessMessage != null)
 {
     <div class="alert alert-info">

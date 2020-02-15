@@ -2,6 +2,12 @@
 @{
     ViewBag.Title = "Profil";
 }
+@section Header
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
 
 <h2>Modifier mon profil :</h2></br>
 <form method="post" action="/Utilisateur/Home/Update" enctype="multipart/form-data">

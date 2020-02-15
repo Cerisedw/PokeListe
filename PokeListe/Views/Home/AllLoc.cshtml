@@ -1,7 +1,12 @@
 ﻿@{
     ViewBag.Title = "Toutes les localisations";
 }
-
+@section Header
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
 
 
 <div class="containerVignetteDetails">

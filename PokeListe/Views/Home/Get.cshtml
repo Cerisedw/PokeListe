@@ -1,7 +1,12 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-
+@section Header
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
 <div class="row">
     <div class="containerVignetteDetails">
         <div class="vignetteDetails">
@@ -17,7 +22,7 @@
             <div class="vignetteRow">
                 <h4>Obtention</h4>
                 <p>@Model.Obtention</p>
-                @foreach(PokeListe.Models.Models.LocalisationViewSimple loc in Model.Localisations)
+                @foreach (PokeListe.Models.Models.LocalisationViewSimple loc in Model.Localisations)
                 {
                     <a href="~/Home/GetLoc/@loc.IdLocalisation">
                         @loc.Nom

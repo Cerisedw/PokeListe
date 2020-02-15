@@ -2,6 +2,15 @@
 @{
     ViewBag.Title = "Index";
 }
+
+@section Header
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
+
+
 @if (ViewBag.insertMessage != null)
 {
     <div class="alert alert-info">

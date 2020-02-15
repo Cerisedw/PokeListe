@@ -2,7 +2,12 @@
     ViewBag.Title = "Tous les types";
 }
 
-
+@section Header
+{
+    @{
+        Html.RenderPartial("~/Views/Shared/_GeneralHeader.cshtml");
+    }
+}
 
 <div class="containerVignetteDetails">
     <div class="vignetteDetails">
